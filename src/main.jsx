@@ -7,7 +7,7 @@ import Skills from "./components/Skills/Skills";
 import Contact from "./components/Contact/Contact";
 import PageNotFOund from "./components/Common/PageNotFOund";
 import About from "./components/About/About";
-import Project from "./components/Projects/project";
+import Project from "./components/Projects/Project"
 
 const router = createBrowserRouter([
   {
