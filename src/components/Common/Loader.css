@@ -3,8 +3,10 @@
   justify-content: center;
   align-items: center;
   height:100vh;
+  border-radius: 20px;
+  padding: 15px;
   width: 100%;
-  background-color: #1e1e1e;
+  background: var(--eerie-black-2);
   animation: fadeOut 0.5s ease-out forwards; /* Fades the loader */
   animation-delay: 1.5s; /* Wait for 1.5 seconds before fading */
   top: 0;
