@@ -1,5 +1,8 @@
 import { useState } from "react";
 import profile from "../assets/uifaces-cartoon-image.jpg";
+import { Link } from "react-router-dom";
+import resume from "../assets/Resume.pdf";
+
 
 const Sidebar = () => {
   const [toggle, settoggle] = useState(false);
@@ -14,11 +17,16 @@ const Sidebar = () => {
         </figure>
 
         <div className="info-content">
-          <h1 className="name" title="Richard hanrick">
-            Shreekant
+          <h1 className="name" title="Shreekant">
+            Shreekant 
           </h1>
 
           <p className="title">Web developer</p>
+        </div>
+        <div>
+          <Link to={resume} target="_blank" className="resume-btn">
+            Resume
+          </Link>
         </div>
 
         <button

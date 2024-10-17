@@ -1,22 +1,13 @@
-import { useEffect, useRef, useState } from "react";
+import {useRef} from "react";
 import { useLocation } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Loader from "../Common/Loader";
 
 const Contact = () => {
   const location = useLocation();
   const isActive = location.pathname === "/contact";
-  const [isLoading, setisLoading] = useState(false);
-  useEffect(() => {
-    setisLoading(true);
-    document.body.style.overflow = "hidden";
-    setTimeout(() => {
-      setisLoading(false);
-      document.body.style.overflow = "auto"; 
-    }, 2000);
-  }, []);
+
 
   const form = useRef();
 
@@ -57,8 +48,6 @@ const Contact = () => {
   };
 
   return (
-    <>
-      {isLoading && <Loader />}
 
       <article
         className={`contact ${isActive ? "active" : ""}`}
@@ -126,7 +115,6 @@ const Contact = () => {
         </section>
         <ToastContainer />
       </article>
-    </>
   );
 };
 
