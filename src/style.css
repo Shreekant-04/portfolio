@@ -315,6 +315,7 @@ article.active {
   z-index: -1;
 }
 
+
 /*-----------------------------------*\
   #MAIN
 \*-----------------------------------*/
@@ -895,7 +896,6 @@ main {
 }
 
 .skills-list {
-  padding: 20px;
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
@@ -1537,10 +1537,10 @@ textarea.form-input::-webkit-resizer {
     padding-bottom: 35px;
   }
 
-  .content-card {
+  /* .content-card {
     padding: 30px;
     padding-top: 25px;
-  }
+  } */
 
   .testimonials-avatar-box {
     transform: translate(30px, -30px);
@@ -1626,6 +1626,20 @@ textarea.form-input::-webkit-resizer {
     height: 8px;
     width: 8px;
     left: -43px;
+  }
+  .timeline-text-link {
+    color: #fff;
+    border: 1px solid #fff;
+    width: max-content;
+    padding: 5px 15px;
+    border-radius: 20px;
+    margin-top: 5px;
+    transition: all 0.09s linear;
+  }
+  .timeline-text-link:hover {
+    border: 1px solid var(--vegas-gold);
+    color: var(--vegas-gold);
+    transform: scale(1.02);
   }
 
   .skills-item:not(:last-child) {
