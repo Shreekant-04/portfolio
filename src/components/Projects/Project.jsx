@@ -7,27 +7,32 @@ const Project = () => {
   const location = useLocation();
   const isActive = location.pathname === "/projects";
   const [activeFilter, setActiveFilter] = useState("All");
-  const [isLoading, setisLoading] = useState(true);
+  const [isLoading, setisLoading] = useState(false);
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    try {
-      setisLoading(true);
-      document.body.style.overflow = "hidden";
-      const fetch = async () => {
+    const fetchData = async () => {
+      try {
+        setisLoading(true);
+        document.body.style.overflow = "hidden";
         const response = await axios.get(
           "https://portfolio-backend-three-hazel.vercel.app/show"
         );
         const data = await response.data.data;
         setProjects(data);
-      };
-      fetch();
-    } catch (err) {
-      console.log(err);
-    } finally {
-      setTimeout(() => setisLoading(false),500);
+      } catch (err) {
+        console.log(err);
+      } finally {
+        setisLoading(false);
+        document.body.style.overflow = "auto";
+      }
+    };
+
+    fetchData();
+
+    return () => {
       document.body.style.overflow = "auto";
-    }
+    };
   }, []);
 
   const handleFilterChange = (filter) => {
@@ -56,7 +61,7 @@ const Project = () => {
           overflow: `${isLoading ? "hidden" : ""}`,
         }}
       >
-        {isLoading && <Loader />}
+        {isLoading ? <Loader /> : ""}
         <ul className="filter-list">
           {filters.map((filter) => (
             <li className="filter-item" key={filter}>
