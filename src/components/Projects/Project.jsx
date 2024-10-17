@@ -42,7 +42,7 @@ const Project = () => {
   const filteredProjects = projects.filter((project) => {
     return activeFilter === "All" || project.category === activeFilter;
   });
-  const filters = ["All", "Full-Stack", "Frontend", "Backend"];
+  const filters = ["All", "Full-Stack", "Frontend", "Backend","Mini-Projects"];
 
   return (
     <article
