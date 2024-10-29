@@ -6,7 +6,7 @@ import axios from "axios";
 const Project = () => {
   const location = useLocation();
   const isActive = location.pathname === "/projects";
-  const [activeFilter, setActiveFilter] = useState("All");
+  const [activeFilter, setActiveFilter] = useState("Full-Stack");
   const [isLoading, setisLoading] = useState(false);
   const [projects, setProjects] = useState([]);
 
