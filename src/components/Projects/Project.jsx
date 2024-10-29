@@ -42,81 +42,90 @@ const Project = () => {
   const filteredProjects = projects.filter((project) => {
     return activeFilter === "All" || project.category === activeFilter;
   });
-  const filters = ["All", "Full-Stack", "Frontend", "Backend","Mini-Projects"];
+  const filters = ["All", "Full-Stack", "Frontend", "Backend", "Mini-Projects"];
 
   return (
-    <article
-      className={`portfolio ${isActive ? "active" : ""}`}
-      data-page="portfolio"
-    >
-      <header>
-        <h2 className="h2 article-title">Portfolio</h2>
-      </header>
-
-      {/* Filter Buttons */}
-      <section
-        className="projects"
-        style={{
-          position: "relative",
-          overflow: `${isLoading ? "hidden" : ""}`,
-        }}
+    <>
+      <article
+        className={`portfolio ${isActive ? "active" : ""}`}
+        data-page="portfolio"
       >
-        {isLoading ? <Loader /> : ""}
-        <ul className="filter-list">
-          {filters.map((filter) => (
-            <li className="filter-item" key={filter}>
-              <button
-                className={activeFilter === filter ? "active" : ""}
-                onClick={() => handleFilterChange(filter)}
-              >
-                {filter}
-              </button>
-            </li>
-          ))}
-        </ul>
+        <header>
+          <h2 className="h2 article-title">Projects</h2>
+        </header>
 
-        {/* Filter Select Box */}
-        <div className="filter-select-box">
-          <select
-            className="filter-select"
-            value={activeFilter}
-            onChange={(e) => handleFilterChange(e.target.value)}
+        {isLoading && <Loader />}
+
+        {/* Filter Buttons */}
+        {!isLoading && (
+          <section
+            className="projects"
+            style={{
+              position: "relative",
+              overflow: `${isLoading ? "hidden" : ""}`,
+            }}
           >
-            {filters.map((filter, index) => (
-              <option value={filter} key={index}>
-                {filter}
-              </option>
-            ))}
-          </select>
-        </div>
+            <ul className="filter-list">
+              {filters.map((filter) => (
+                <li className="filter-item" key={filter}>
+                  <button
+                    className={activeFilter === filter ? "active" : ""}
+                    onClick={() => handleFilterChange(filter)}
+                  >
+                    {filter}
+                  </button>
+                </li>
+              ))}
+            </ul>
 
-        {/* Projects List */}
-        <ul className="project-list">
-          {filteredProjects.map((project) => (
-            <li
-              className="project-item active"
-              data-filter-item
-              data-category={project.category.toLowerCase()}
-              key={project._id}
-            >
-              <Link
-                to={project.projectLink}
-                target={project.projectLink !== "#" && "_blank"}
+            {/* Filter Select Box */}
+            <div className="filter-select-box">
+              <select
+                className="filter-select"
+                value={activeFilter}
+                onChange={(e) => handleFilterChange(e.target.value)}
               >
-                <figure className="project-img">
-                  <div className="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src={project.imgUrl} alt={project.alt} loading="lazy" />
-                </figure>
-                <h3 className="project-title">{project.title}</h3>
-                <p className="project-category">{project.category}</p>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </section>
-    </article>
+                {filters.map((filter, index) => (
+                  <option value={filter} key={index}>
+                    {filter}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            {/* Projects List */}
+            <ul className="project-list">
+              {filteredProjects.map((project) => (
+                <li
+                  className="project-item active"
+                  data-filter-item
+                  data-category={project.category.toLowerCase()}
+                  key={project._id}
+                >
+                  <Link
+                    to={project.projectLink}
+                    target={project.projectLink !== "#" && "_blank"}
+                  >
+                    <figure className="project-img">
+                      <div className="project-item-icon-box">
+                        <ion-icon name="eye-outline"></ion-icon>
+                      </div>
+                      <img
+                        src={project.imgUrl}
+                        alt={project.alt}
+                        loading="lazy"
+                      />
+                    </figure>
+                    <h3 className="project-title">{project.title}</h3>
+                    <p className="project-category">{project.category}</p>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+      </article>
+    </>
   );
 };
 
