@@ -1,8 +1,34 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const Skills = () => {
   const location = useLocation();
   const isActive = location.pathname === "/skills";
+  const [certificates, setcertificates] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        document.body.style.overflow = "hidden";
+        const response = await axios.get(
+          "https://portfolio-backend-three-hazel.vercel.app/certificate"
+        );
+        const data = await response.data.data;
+        setcertificates(data);
+      } catch (err) {
+        console.log(err);
+      } finally {
+        document.body.style.overflow = "auto";
+      }
+    };
+
+    fetchData();
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, []);
   return (
     <article
       className={`resume ${isActive ? "active" : ""}`}
@@ -225,66 +251,37 @@ const Skills = () => {
       </section>
 
       {/* Certification */}
-      <section className="timeline">
-        <div className="title-wrapper">
-          <div className="icon-box">
-            <ion-icon name="book-outline"></ion-icon>
+      {certificates.length ? (
+        <section className="timeline">
+          <div className="title-wrapper">
+            <div className="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+            <h3 className="h3">Certifications</h3>
           </div>
-          <h3 className="h3">Certifications</h3>
-        </div>
 
-        <ol className="timeline-list">
-          <li className="timeline-item">
-            <h4 className="h4 timeline-item-title">
-              Front-end Development-libraries
-            </h4>
-            <span>Issued Aug 2024</span>
-            <p className="timeline-text ">
-              <Link
-                to={
-                  "https://www.freecodecamp.org/certification/Shreekant_04/front-end-development-libraries"
-                }
-                target="_blank"
-                className="timeline-text-link"
-              >
-                Show Credential
-              </Link>
-            </p>
-          </li>
-          <li className="timeline-item">
-            <h4 className="h4 timeline-item-title">
-              Javascript Algorithms and Data structures
-            </h4>
-            <span>Issued July 2024</span>
-            <p className="timeline-text">
-              <Link
-                to={
-                  "https://www.freecodecamp.org/certification/Shreekant_04/javascript-algorithms-and-data-structures-v8"
-                }
-                target="_blank"
-                className="timeline-text-link"
-              >
-                Show Credential
-              </Link>
-            </p>
-          </li>
-          <li className="timeline-item">
-            <h4 className="h4 timeline-item-title">Responsive Web Design</h4>
-            <span>Issued June 2024</span>
-            <p className="timeline-text">
-              <Link
-                to={
-                  "https://www.freecodecamp.org/certification/Shreekant_04/responsive-web-design"
-                }
-                target="_blank"
-                className="timeline-text-link"
-              >
-                Show Credential
-              </Link>
-            </p>
-          </li>
-        </ol>
-      </section>
+          <ol className="timeline-list">
+            {certificates.map((certificate) => (
+              <li className="timeline-item" key={certificate._id}>
+                <h4 className="h4 timeline-item-title">{certificate.title}</h4>
+                <span>Issued On {certificate.issued}</span>
+                <p className="timeline-text ">
+                  <Link
+                    to={certificate.Url}
+                    target="_blank"
+                    className="timeline-text-link"
+                  >
+                    Show Credential
+                  </Link>
+                </p>
+              </li>
+            ))}
+          </ol>
+        </section>
+      ) : (
+        ""
+      )}
+
       {/* Education Section */}
       <section className="timeline">
         <div className="title-wrapper">
