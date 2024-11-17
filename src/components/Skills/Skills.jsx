@@ -263,8 +263,22 @@ const Skills = () => {
           <ol className="timeline-list">
             {certificates.map((certificate) => (
               <li className="timeline-item" key={certificate._id}>
-                <h4 className="h4 timeline-item-title">{certificate.title}</h4>
-                <span>Issued On {certificate.issued}</span>
+                <h4 className="h4 timeline-item-title"> {certificate.title}</h4>
+                <span
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    width: "max-content",
+                    gap: "4px",
+                  }}
+                >
+                  <span style={{ color: "white" }}>Issued</span>
+                  <span style={{ fontWeight: 700 }}>
+                    {" "}
+                    {certificate.issued}{" "}
+                  </span>
+                </span>
                 <p className="timeline-text ">
                   <Link
                     to={certificate.Url}
