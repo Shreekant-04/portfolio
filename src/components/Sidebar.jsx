@@ -1,6 +1,5 @@
 import { useState } from "react";
 import profile from "../assets/uifaces-cartoon-image.jpg";
-import { Link } from "react-router-dom";
 
 
 const Sidebar = () => {
@@ -23,9 +22,9 @@ const Sidebar = () => {
           <p className="title">Web developer</p>
         </div>
         <div>
-          <Link href={"https://app.enhancv.com/share/ae8f1e1a/?utm_medium=growth&utm_campaign=share-resume&utm_source=dynamic"} target="_blank" className="resume-btn">
+          <a href="https://app.enhancv.com/share/ae8f1e1a/?utm_medium=growth&utm_campaign=share-resume&utm_source=dynamic" target="_blank" className="resume-btn">
             Resume
-          </Link>
+          </a>
         </div>
 
         <button
