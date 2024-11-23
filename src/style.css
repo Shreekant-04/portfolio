@@ -343,7 +343,7 @@ main {
 .sidebar-info {
   position: relative;
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
   align-items: center;
   gap: 15px;
 }
@@ -881,6 +881,21 @@ main {
   background: var(--jet);
 }
 
+.timeline-text-link {
+  color: #fff;
+  border: 1px solid #fff;
+  width: max-content;
+  padding: 5px 15px;
+  border-radius: 20px;
+  margin-top: 5px;
+  transition: all 0.09s linear;
+}
+.timeline-text-link:hover {
+  border: 1px solid var(--vegas-gold);
+  color: var(--vegas-gold);
+  transform: scale(1.02);
+}
+
 .timeline-item::after {
   content: "";
   position: absolute;
@@ -1401,9 +1416,8 @@ textarea.form-input::-webkit-resizer {
     margin-inline: auto;
     padding: 30px;
   }
-  .resume-btn{
+  .resume-btn {
     margin-left: 0px;
-
   }
 
   .article-title {
@@ -1633,20 +1647,6 @@ textarea.form-input::-webkit-resizer {
     width: 8px;
     left: -43px;
   }
-  .timeline-text-link {
-    color: #fff;
-    border: 1px solid #fff;
-    width: max-content;
-    padding: 5px 15px;
-    border-radius: 20px;
-    margin-top: 5px;
-    transition: all 0.09s linear;
-  }
-  .timeline-text-link:hover {
-    border: 1px solid var(--vegas-gold);
-    color: var(--vegas-gold);
-    transform: scale(1.02);
-  }
 
   .skills-item:not(:last-child) {
     margin-bottom: 25px;
@@ -1853,7 +1853,7 @@ textarea.form-input::-webkit-resizer {
     width: max-content;
     margin: auto;
   }
-  .sidebar-info{
+  .sidebar-info {
     justify-content: flex-start;
   }
 
