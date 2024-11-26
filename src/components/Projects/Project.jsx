@@ -9,15 +9,14 @@ const Project = () => {
   const [activeFilter, setActiveFilter] = useState("Full-Stack");
   const [isLoading, setisLoading] = useState(false);
   const [projects, setProjects] = useState([]);
+  let baseUrl = import.meta.env.VITE_API_URL
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         setisLoading(true);
         document.body.style.overflow = "hidden";
-        const response = await axios.get(
-          "https://portfolio-backend-three-hazel.vercel.app/show"
-        );
+        const response = await axios.get(baseUrl + "/show");
         const data = await response.data.data;
         setProjects(data);
       } catch (err) {
@@ -33,7 +32,7 @@ const Project = () => {
     return () => {
       document.body.style.overflow = "auto";
     };
-  }, []);
+  }, [baseUrl]);
 
   const handleFilterChange = (filter) => {
     setActiveFilter(filter);

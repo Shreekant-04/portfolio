@@ -6,14 +6,14 @@ const Skills = () => {
   const location = useLocation();
   const isActive = location.pathname === "/skills";
   const [certificates, setcertificates] = useState([]);
+  let baseUrl = import.meta.env.VITE_API_URL
+
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         document.body.style.overflow = "hidden";
-        const response = await axios.get(
-          "https://portfolio-backend-three-hazel.vercel.app/certificate"
-        );
+        const response = await axios.get(baseUrl + "/certificate");
         const data = await response.data.data;
         setcertificates(data);
       } catch (err) {
@@ -28,7 +28,7 @@ const Skills = () => {
     return () => {
       document.body.style.overflow = "auto";
     };
-  }, []);
+  }, [baseUrl]);
   return (
     <article
       className={`resume ${isActive ? "active" : ""}`}
