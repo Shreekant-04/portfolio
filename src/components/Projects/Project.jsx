@@ -6,7 +6,7 @@ import axios from "axios";
 const Project = () => {
   const location = useLocation();
   const isActive = location.pathname === "/projects";
-  const [activeFilter, setActiveFilter] = useState("Full-Stack");
+  const [activeFilter, setActiveFilter] = useState("Frontend");
   const [isLoading, setisLoading] = useState(false);
   const [projects, setProjects] = useState([]);
   let baseUrl = import.meta.env.VITE_API_URL
