@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height:100vh;
+  height: 100vh;
   padding: 15px;
   width: 100%;
   background: var(--eerie-black-2);
@@ -11,6 +11,7 @@
   top: 0;
   left: 0;
   z-index: 999;
+  border-radius: 20px;
 }
 
 .liquid-loader {
