@@ -7,8 +7,6 @@ import "react-toastify/dist/ReactToastify.css";
 const Contact = () => {
   const location = useLocation();
   const isActive = location.pathname === "/contact";
-
-
   const form = useRef();
 
   const sendEmail = (e) => {
