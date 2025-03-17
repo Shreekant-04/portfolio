@@ -1,7 +1,6 @@
 import { useState } from "react";
 import profile from "../assets/uifaces-cartoon-image.jpg";
 import { Link } from "react-router-dom";
-import resume from "../assets/Resume.pdf";
 
 
 const Sidebar = () => {
@@ -24,7 +23,7 @@ const Sidebar = () => {
           <p className="title">Web developer</p>
         </div>
         <div>
-          <Link to={resume} target="_blank" className="resume-btn">
+          <Link to="https://app.enhancv.com/share/a1f71824/?utm_medium=growth&utm_campaign=share-resume&utm_source=dynamic" target="_blank" className="resume-btn">
             Resume
           </Link>
         </div>
