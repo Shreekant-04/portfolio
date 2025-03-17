@@ -25,6 +25,7 @@ const Sidebar = () => {
           <Link
             to="https://app.enhancv.com/share/a1f71824/?utm_medium=growth&utm_campaign=share-resume&utm_source=dynamic"
             className="resume-btn"
+            target="_blank"
           >
             Resume
           </Link>
