@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Loader from "../Common/Loader";
 import axios from "axios";
+import usePageSeo from "../../hooks/usePageSeo";
 
 const Project = () => {
   const location = useLocation();
@@ -9,7 +10,11 @@ const Project = () => {
   const [activeFilter, setActiveFilter] = useState("Frontend");
   const [isLoading, setisLoading] = useState(false);
   const [projects, setProjects] = useState([]);
-  let baseUrl = import.meta.env.VITE_API_URL
+  let baseUrl = import.meta.env.VITE_API_URL;
+
+  usePageSeo({
+    title: "My Projects | Shreekant",
+  });
 
   useEffect(() => {
     const fetchData = async () => {

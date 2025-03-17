@@ -1,6 +1,6 @@
 import { useState } from "react";
 import profile from "../assets/uifaces-cartoon-image.jpg";
-
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   const [toggle, settoggle] = useState(false);
@@ -14,17 +14,20 @@ const Sidebar = () => {
           <img src={profile} alt="Shreekant" width="80" />
         </figure>
 
-        <div className="info-content">
-          <h1 className="name" title="Shreekant">
-            Shreekant 
-          </h1>
+        <h1 className="info-content">
+          <p className="name" title="Shreekant">
+            Shreekant
+          </p>
 
           <p className="title">Web developer</p>
-        </div>
+        </h1>
         <div>
-          <a href="https://app.enhancv.com/share/a1f71824/?utm_medium=growth&utm_campaign=share-resume&utm_source=dynamic">
+          <Link
+            to="https://app.enhancv.com/share/a1f71824/?utm_medium=growth&utm_campaign=share-resume&utm_source=dynamic"
+            className="resume-btn"
+          >
             Resume
-          </a>
+          </Link>
         </div>
 
         <button
@@ -50,13 +53,12 @@ const Sidebar = () => {
             <div className="contact-info">
               <p className="contact-title">Email</p>
 
-              <a
-                href="mailto:shreekant4062@gmail.com
-"
+              <Link
+                to="mailto:shreekant4062@gmail.com"
                 className="contact-link"
               >
                 shreekant4062@gmail.com
-              </a>
+              </Link>
             </div>
           </li>
 
@@ -103,33 +105,33 @@ const Sidebar = () => {
 
         <ul className="social-list">
           <li className="social-item">
-            <a
-              href="https://www.linkedin.com/in/shreekantkumar/"
+            <Link
+              to="https://www.linkedin.com/in/shreekantkumar/"
               target="_blank"
               className="social-link"
             >
               <ion-icon name="logo-linkedin"></ion-icon>
-            </a>
+            </Link>
           </li>
 
           <li className="social-item">
-            <a
-              href="https://github.com/Shreekant-04"
+            <Link
+              to="https://github.com/Shreekant-04"
               target="_blank"
               className="social-link"
             >
               <ion-icon name="logo-github"></ion-icon>
-            </a>
+            </Link>
           </li>
 
           <li className="social-item">
-            <a
-              href="https://www.instagram.com/shree_4.6/"
+            <Link
+              to="https://www.instagram.com/shree_4.6/"
               target="_blank"
               className="social-link"
             >
               <ion-icon name="logo-instagram"></ion-icon>
-            </a>
+            </Link>
           </li>
         </ul>
       </div>

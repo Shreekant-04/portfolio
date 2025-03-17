@@ -1,7 +1,12 @@
 import { useLocation } from "react-router-dom";
 import devIcon from "../../assets/images/icon-dev.svg";
+import usePageSeo from "../../hooks/usePageSeo";
 
 const About = () => {
+  usePageSeo({
+    title: "About Me | Shreekant",
+  });
+
   const location = useLocation();
   const isActive = location.pathname === "/";
   return (

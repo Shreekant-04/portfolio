@@ -1,13 +1,17 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import usePageSeo from "../../hooks/usePageSeo";
 
 const Skills = () => {
   const location = useLocation();
   const isActive = location.pathname === "/skills";
   const [certificates, setcertificates] = useState([]);
-  let baseUrl = import.meta.env.VITE_API_URL
+  let baseUrl = import.meta.env.VITE_API_URL;
 
+  usePageSeo({
+    title: "My Skills | Shreekant",
+  });
 
   useEffect(() => {
     const fetchData = async () => {
