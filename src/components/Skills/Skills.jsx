@@ -245,7 +245,7 @@ const Skills = () => {
             <h4 className="h4 timeline-item-title">Web Development intern</h4>
             <span>Aug 2024 — Present</span>
             <p className="timeline-text">
-              As a Web Development Intern at Upskill, you worked on building
+              As a Web Development Intern at Upskill, I worked on building
               responsive websites, improving user experience, and collaborating
               with senior developers to optimize performance, gaining hands-on
               experience in front-end and back-end development.
