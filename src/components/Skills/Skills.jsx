@@ -243,7 +243,7 @@ const Skills = () => {
         <ol className="timeline-list">
           <li className="timeline-item">
             <h4 className="h4 timeline-item-title">Web Development intern</h4>
-            <span>Aug 2024 — Present</span>
+            <span>Aug 2024 — Jan 2025</span>
             <p className="timeline-text">
               As a Web Development Intern at Upskill, I worked on building
               responsive websites, improving user experience, and collaborating
