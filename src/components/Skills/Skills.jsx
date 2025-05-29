@@ -242,6 +242,13 @@ const Skills = () => {
 
         <ol className="timeline-list">
           <li className="timeline-item">
+            <h4 className="h4 timeline-item-title">Web Developer</h4>
+            <span>Apr 2025 — Now</span>
+            <p className="timeline-text">
+             As a Web Developer at MHJ Pharmaconcept, I focus on backend development, contributing to the design and implementation of server-side logic, database management, and API integrations. I collaborate closely with the development team to ensure scalable, secure, and efficient systems that support business operations and enhance overall performance.
+            </p>
+          </li>
+          <li className="timeline-item">
             <h4 className="h4 timeline-item-title">Web Development intern</h4>
             <span>Aug 2024 — Jan 2025</span>
             <p className="timeline-text">
@@ -249,15 +256,6 @@ const Skills = () => {
               responsive websites, improving user experience, and collaborating
               with senior developers to optimize performance, gaining hands-on
               experience in front-end and back-end development.
-            </p>
-          </li>
-           <li className="timeline-item">
-            <h4 className="h4 timeline-item-title">Web Developer</h4>
-            <span>Apr 2025 — Now</span>
-            <p className="timeline-text">
-             As a Web Developer at MHJ Pharmaconcept, I focus on backend development, contributing to the design and implementation of server-side logic, database management, and API integrations. I collaborate closely with the development team to ensure scalable, secure, and efficient systems that support business operations and enhance overall performance.
-
-
             </p>
           </li>
         </ol>
