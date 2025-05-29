@@ -251,6 +251,15 @@ const Skills = () => {
               experience in front-end and back-end development.
             </p>
           </li>
+           <li className="timeline-item">
+            <h4 className="h4 timeline-item-title">Web Developer</h4>
+            <span>Apr 2025 — Now</span>
+            <p className="timeline-text">
+             As a Web Developer at MHJ Pharmaconcept, I focus on backend development, contributing to the design and implementation of server-side logic, database management, and API integrations. I collaborate closely with the development team to ensure scalable, secure, and efficient systems that support business operations and enhance overall performance.
+
+
+            </p>
+          </li>
         </ol>
       </section>
 
