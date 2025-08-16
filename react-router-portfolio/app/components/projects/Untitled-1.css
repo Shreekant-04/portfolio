@@ -1,0 +1,91 @@
+/* .loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 15px;
+  width: 100%;
+  background: var(--eerie-black-2);
+  animation: fadeOut 0.5s ease-out forwards; /* Fades the loader */
+/* animation-delay: 1.5s; /* Wait for 1.5 seconds before fading */
+/* top: 0;
+  left: 0;
+  z-index: 999;
+  border-radius: 20px;
+} */
+*/ */
+/* 
+.liquid-loader {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  filter: drop-shadow(0 0 15px rgba(0, 255, 255, 0.4));
+} */
+/* 
+.liquid-loader span {
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(26, 188, 156, 1) 0%,
+    rgba(22, 160, 133, 1) 100%
+  );
+  animation: liquid 1.8s ease-in-out infinite;
+  opacity: 0.8;
+  box-shadow: 0 0 10px rgba(26, 188, 156, 0.6);
+} */
+/* 
+.liquid-loader span:nth-child(1) {
+  animation-delay: 0.1s;
+  background: radial-gradient(
+    circle,
+    rgba(231, 76, 60, 1) 0%,
+    rgba(192, 57, 43, 1) 100%
+  );
+  box-shadow: 0 0 10px rgba(231, 76, 60, 0.6);
+} */
+/* 
+.liquid-loader span:nth-child(2) {
+  animation-delay: 0.3s;
+  background: radial-gradient(
+    circle,
+    rgba(241, 196, 15, 1) 0%,
+    rgba(243, 156, 18, 1) 100%
+  );
+  box-shadow: 0 0 10px rgba(241, 196, 15, 0.6);
+} */
+
+/* .liquid-loader span:nth-child(3) {
+  animation-delay: 0.5s;
+  background: radial-gradient(
+    circle,
+    rgba(52, 152, 219, 1) 0%,
+    rgba(41, 128, 185, 1) 100%
+  );
+  box-shadow: 0 0 10px rgba(52, 152, 219, 0.6);
+} */
+/* 
+@keyframes liquid {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.8;
+  }
+  40% {
+    transform: translateY(-70px) scale(1.2);
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(70px) scale(0.8);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.8;
+  }
+} */
