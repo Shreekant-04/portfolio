@@ -62,10 +62,10 @@ const Projects = () => {
           <h2 className="h2 article-title">Projects</h2>
         </header>
 
-        {isLoading && <Loader />}
+        {/* {isLoading && <Loader />} */}
 
         {/* Filter Buttons */}
-        {!isLoading && (
+        {!isLoading ? (
           <section
             className="projects"
             style={{
@@ -130,6 +130,18 @@ const Projects = () => {
                 </li>
               ))}
             </ul>
+          </section>
+        ) : (
+          <section
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              // border: "1px solid #ccc",
+              minHeight: "50vmin",
+            }}
+          >
+            <Loader />
           </section>
         )}
       </article>
