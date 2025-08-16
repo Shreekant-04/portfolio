@@ -12,7 +12,6 @@ import type { Route } from "./+types/root";
 import Sidebar from "./components/Sidebar";
 import Navbar from "./components/Navbar";
 import "./app.css";
-import { useEffect } from "react";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -28,8 +27,6 @@ export const links: Route.LinksFunction = () => [
   { rel: "icon", href: "/favicon32x32.ico" },
   { rel: "manifest", href: "/manifest.json" },
 ];
-
-
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
