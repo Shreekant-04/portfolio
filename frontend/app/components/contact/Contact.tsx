@@ -1,55 +1,58 @@
 import emailjs from '@emailjs/browser';
+import axios from 'axios';
 import { Send } from 'lucide-react';
-import { useRef } from 'react';
+import { useReducer, useRef } from 'react';
 import { useLocation } from 'react-router';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+const initialState = {
+  fullName: '',
+  email: '',
+  message: '',
+};
+
+const reducer = (
+  state: typeof initialState,
+  action: { type: string; payload: string }
+) => {
+  switch (action.type) {
+    case 'SET_FULLNAME':
+      return { ...state, fullName: action.payload };
+    case 'SET_EMAIL':
+      return { ...state, email: action.payload };
+    case 'SET_MESSAGE':
+      return { ...state, message: action.payload };
+    default:
+      return state;
+  }
+};
+
 const Contact = () => {
   const location = useLocation();
   const isActive = location.pathname === '/contact';
-  const form = useRef<HTMLFormElement | null>(null);
+  const [state, setState] = useReducer(reducer, initialState);
+  const { fullName, email, message } = state;
+  let baseUrl = 'https://api.shreekant.dev/api/v1';
 
-  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+  const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    console.log('Sending email with state:', state);
 
-    const serviceId = import.meta.env.SERVICE_ID;
-    const templateId = import.meta.env.TEMPLATE_ID;
-    const publicKey = import.meta.env.PUBLIC_KEY;
-    console.log('Service ID:', serviceId);
-    console.log('Template ID:', templateId);
-    console.log('Public Key:', publicKey);
-
-    if (form.current) {
-      emailjs.sendForm(serviceId, templateId, form.current, publicKey).then(
-        () => {
-          toast.success('Message sent successfully!', {
-            position: 'bottom-right',
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: 'dark',
-          });
-          if (form.current) {
-            form.current.reset();
-          }
+    try {
+      const response = await axios.post(`${baseUrl}/public/contact`, state, {
+        headers: {
+          'Content-Type': 'application/json',
         },
-        (error) => {
-          toast.error('Message failed to send: ' + error.text, {
-            position: 'bottom-right',
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: 'dark',
-          });
-        }
-      );
+      });
+
+      if (!response.data.success) {
+        throw new Error('Network response was not ok');
+      }
+      toast.success('Message sent successfully!');
+    } catch (error) {
+      toast.error('Failed to send message. Please try again later.');
+      console.error('Error:', error);
     }
   };
 
@@ -83,11 +86,15 @@ const Contact = () => {
       <section className="contact-form">
         <h3 className="h3 form-title">Contact Form</h3>
 
-        <form className="form" ref={form} onSubmit={sendEmail}>
+        <form className="form" onSubmit={sendEmail}>
           <div className="input-wrapper">
             <input
               type="text"
-              name="fullname"
+              name="fullName"
+              value={fullName}
+              onChange={(e) =>
+                setState({ type: 'SET_FULLNAME', payload: e.target.value })
+              }
               className="form-input"
               placeholder="Full name"
               required
@@ -97,6 +104,10 @@ const Contact = () => {
             <input
               type="email"
               name="email"
+              value={email}
+              onChange={(e) =>
+                setState({ type: 'SET_EMAIL', payload: e.target.value })
+              }
               className="form-input"
               placeholder="Email address"
               required
@@ -106,6 +117,10 @@ const Contact = () => {
 
           <textarea
             name="message"
+            value={message}
+            onChange={(e) =>
+              setState({ type: 'SET_MESSAGE', payload: e.target.value })
+            }
             className="form-input"
             placeholder="Your Message"
             required

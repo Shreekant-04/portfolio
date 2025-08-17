@@ -77,7 +77,7 @@ class Email {
   }
 
   async sendAutoReply({ fullname, message }) {
-    return this.send("Auto_reply", "Thanks for Contacting!", {
+    return this.send("auto_reply", "Thanks for Contacting!", {
       fullname,
       message,
     });

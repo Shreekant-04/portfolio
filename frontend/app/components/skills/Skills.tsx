@@ -13,13 +13,13 @@ const Skills = () => {
   const location = useLocation();
   const isActive = location.pathname === '/skills';
   const [certificates, setcertificates] = useState<certificateType[]>([]);
-  let baseUrl = 'https://portfolio-backend-three-hazel.vercel.app';
+  let baseUrl = 'https://api.shreekant.dev/api/v1';
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         document.body.style.overflow = 'hidden';
-        const response = await axios.get(baseUrl + '/certificate');
+        const response = await axios.get(baseUrl + '/public/certificate');
         const data = await response.data.data;
         setcertificates(data);
       } catch (err) {
@@ -400,7 +400,6 @@ const Skills = () => {
           <div className="title-wrapper">
             <div className="icon-box">
               <BookOpen size={18} />
-
             </div>
             <h3 className="h3">Certifications</h3>
           </div>

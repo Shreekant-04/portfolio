@@ -19,14 +19,14 @@ const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('Frontend');
   const [isLoading, setisLoading] = useState(false);
   const [projects, setProjects] = useState<ProjectType[]>([]);
-  let baseUrl = 'https://portfolio-backend-three-hazel.vercel.app';
+  let baseUrl = 'https://api.shreekant.dev/api/v1';
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         setisLoading(true);
         document.body.style.overflow = 'hidden';
-        const response = await axios.get(baseUrl + '/show');
+        const response = await axios.get(baseUrl + '/public/projects');
         const data = await response.data.data;
         setProjects(data);
       } catch (err) {
