@@ -1,7 +1,7 @@
 import emailjs from '@emailjs/browser';
 import axios from 'axios';
-import { Send } from 'lucide-react';
-import { useReducer, useRef } from 'react';
+import { Loader2, Send } from 'lucide-react';
+import { useReducer, useRef, useState } from 'react';
 import { useLocation } from 'react-router';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -33,11 +33,13 @@ const Contact = () => {
   const isActive = location.pathname === '/contact';
   const [state, setState] = useReducer(reducer, initialState);
   const { fullName, email, message } = state;
+  const [loading, setLoading] = useState(false);
   let baseUrl = 'https://api.shreekant.dev/api/v1';
 
   const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log('Sending email with state:', state);
+    setLoading(true);
 
     try {
       const response = await axios.post(`${baseUrl}/public/contact`, state, {
@@ -53,6 +55,11 @@ const Contact = () => {
     } catch (error) {
       toast.error('Failed to send message. Please try again later.');
       console.error('Error:', error);
+    } finally {
+      setLoading(false);
+      setState({ type: 'SET_FULLNAME', payload: '' });
+      setState({ type: 'SET_EMAIL', payload: '' });
+      setState({ type: 'SET_MESSAGE', payload: '' });
     }
   };
 
@@ -127,9 +134,26 @@ const Contact = () => {
             data-form-input
           ></textarea>
 
-          <button className="form-btn" type="submit" data-form-btn>
-            <Send size={18} />
-            <span>Send Message</span>
+          <button
+            className="form-btn"
+            type="submit"
+            data-form-btn
+            disabled={loading}
+          >
+            {loading ? (
+              <>
+                <Loader2
+                  size={18}
+                  style={{ animation: 'spin 1s linear infinite' }}
+                />
+                <span>Sending...</span>
+              </>
+            ) : (
+              <>
+                <Send size={18} />
+                <span>Send Message</span>
+              </>
+            )}
           </button>
         </form>
       </section>
