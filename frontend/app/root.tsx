@@ -26,7 +26,12 @@ export const links: Route.LinksFunction = () => [
     rel: 'stylesheet',
     href: 'https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap',
   },
-  { rel: 'icon', href: '/favicon32x32.ico' },
+
+  { rel: 'icon', href: '/favicon16x16.ico' },
+  { rel: 'apple-touch-icon', href: '/favicon32x32.ico' },
+  { rel: 'mask-icon', href: '/favicon32x32.ico', color: '#5bbad5' },
+  { rel: 'shortcut icon', href: '/favicon32x32.ico' },
+
   { rel: 'manifest', href: '/manifest.json' },
   { rel: 'canonical', href: 'https://shreekant.dev' },
 ];

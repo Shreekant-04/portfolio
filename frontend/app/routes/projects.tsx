@@ -3,7 +3,7 @@ import ProjectComponent from '../components/projects/Projects';
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: 'Projects | Your Name - Portfolio' },
+    { title: 'Projects | Shreekant - Portfolio' },
     {
       name: 'description',
       content:
@@ -14,9 +14,7 @@ export function meta({}: Route.MetaArgs) {
       content:
         'Projects, Portfolio, Web Developer, Designer, Case Studies, Work, Shreekant',
     },
-    { name: 'canonical', href: 'https://shreekant.dev' },
 
-    { name: 'robots', content: 'index, follow' },
     { name: 'og:title', content: 'Projects | Shreekant - Portfolio' },
     {
       name: 'og:description',

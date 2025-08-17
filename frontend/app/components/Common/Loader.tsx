@@ -1,13 +1,13 @@
-import "./Loader.css";
-import type { CSSProperties } from "react";
+import './Loader.css';
+import type { CSSProperties } from 'react';
 
 const Loader = ({
-  position = "absolute",
+  position = 'absolute',
   size = 40,
-  color = "#f03355",
+  color = '#ffdb70',
   style = {},
 }: {
-  position?: CSSProperties["position"];
+  position?: CSSProperties['position'];
   size?: number;
   color?: string;
   style?: CSSProperties;
@@ -18,7 +18,7 @@ const Loader = ({
       style={{
         // position,
         width: size,
-        aspectRatio: "1 / 1",
+        aspectRatio: '1 / 1',
         color,
         ...style,
       }}

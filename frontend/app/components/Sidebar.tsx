@@ -1,6 +1,6 @@
 declare namespace JSX {
   interface IntrinsicElements {
-    "ion-icon": React.DetailedHTMLProps<
+    'ion-icon': React.DetailedHTMLProps<
       React.HTMLAttributes<HTMLElement>,
       HTMLElement
     > & {
@@ -9,9 +9,9 @@ declare namespace JSX {
   }
 }
 
-import { useState } from "react";
-import profile from "../assets/uifaces-cartoon-image.jpg";
-import { Link } from "react-router";
+import { useState } from 'react';
+import profile from '../assets/uifaces-cartoon-image.jpg';
+import { Link } from 'react-router';
 
 const Sidebar = () => {
   const [toggle, settoggle] = useState<boolean>(false);
@@ -19,10 +19,17 @@ const Sidebar = () => {
     settoggle((toggle) => !toggle);
   };
   return (
-    <aside className={`sidebar ${toggle ? "active" : ""}`} data-sidebar>
+    <aside className={`sidebar ${toggle ? 'active' : ''}`} data-sidebar>
       <div className="sidebar-info">
         <figure className="avatar-box">
-          <img src={profile} alt="Shreekant" width="80" />
+          <img
+            src={profile}
+            alt="Shreekant"
+            width="80"
+            height={'auto'}
+            loading="eager"
+            title="Shreekant"
+          />
         </figure>
 
         <h1 className="info-content">
@@ -123,6 +130,7 @@ const Sidebar = () => {
               className="social-link"
             >
               <ion-icon name="logo-linkedin"></ion-icon>
+              <span style={{ display: 'none' }}>LinkedIn</span>
             </Link>
           </li>
 
@@ -133,6 +141,7 @@ const Sidebar = () => {
               className="social-link"
             >
               <ion-icon name="logo-github"></ion-icon>
+              <span style={{ display: 'none' }}>GitHub</span>
             </Link>
           </li>
 
@@ -143,6 +152,7 @@ const Sidebar = () => {
               className="social-link"
             >
               <ion-icon name="logo-instagram"></ion-icon>
+              <span style={{ display: 'none' }}>Instagram</span>
             </Link>
           </li>
         </ul>

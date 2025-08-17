@@ -1,14 +1,14 @@
-import React from "react";
-import { useLocation } from "react-router";
-import devIcon from "../../assets/images/icon-dev.svg";
+import React from 'react';
+import { useLocation } from 'react-router';
+import devIcon from '../../assets/images/icon-dev.svg';
 
 const Home = () => {
   const location = useLocation();
-  const isActive = location.pathname === "/";
+  const isActive = location.pathname === '/';
   return (
     <>
       <article
-        className={`about ${isActive ? "active" : ""}`}
+        className={`about ${isActive ? 'active' : ''}`}
         data-page="about"
       >
         <header>
@@ -39,7 +39,13 @@ const Home = () => {
           <ul className="service-list">
             <li className="service-item">
               <div className="service-icon-box">
-                <img src={devIcon} alt="Web development icon" width="40" />
+                <img
+                  src={devIcon}
+                  alt="Web development icon"
+                  width="40"
+                  height="auto"
+                  loading="lazy"
+                />
               </div>
 
               <div className="service-content-box">
