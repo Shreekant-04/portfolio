@@ -22,8 +22,10 @@ const maildata = {
 const mail = new Email(maildata);
 mail.verify();
 
-const server = app.listen(process.env.PORT || 3000, () => {
-  logger.info("Server is running on port", process.env.PORT || 3000);
+const port = process.env.PORT || 2204;
+
+const server = app.listen(port, () => {
+  logger.info(`Server is running on port : ${port}`);
 });
 
 process.on("unhandledRejection", (err) => {
