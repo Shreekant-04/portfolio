@@ -1,0 +1,12 @@
+{
+  "watch": ["."],
+  "ignore": [
+    "backups/*",
+    "logs/*",
+    "utils/blockScanner.js",
+    ".env",
+    "node_modules"
+  ],
+  "ext": ".",
+  "restartable": "s"
+}

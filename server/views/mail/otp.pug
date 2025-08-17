@@ -1,0 +1,17 @@
+div(style="max-width: 600px; background: hsl(0, 0%, 7%); color: hsl(0, 0%, 100%); margin: 20px auto; padding: 10px; border-radius: 8px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);")
+  h2(style="color: hsl(45, 54%, 58%); text-align: center; margin: 0; padding: 15px 0;")
+    | 🔐 Email Verification Code
+  div(style="padding: 20px; color: hsl(0, 0%, 100%);")
+    p
+      | Hello 
+      strong #{fullname}
+      | ,
+    p Your One-Time Password (OTP) for email verification is:
+    div(style="padding: 18px 0; text-align: center;")
+      span(style="display: inline-block; font-size: 2.2em; letter-spacing: 0.2em; background: hsl(45, 54%, 58%); color: hsl(0, 0%, 7%); padding: 10px 28px; border-radius: 8px; font-weight: bold;") #{otp}
+    p(style="margin-top: 18px; ")
+      | This code is valid for 10 minutes. Please do not share it with anyone.
+    p(style="font-size: 13px; color: hsl(0, 46%, 51%); margin-top: 24px; text-align: center;")
+      | If you did not request this code, you can safely ignore this email.
+    p(style="font-size: 12px; color: hsl(0, 46%, 51%); text-align: center; margin-top: 30px;")
+      | &copy; #{new Date().getFullYear()} Shreekant | Portfolio

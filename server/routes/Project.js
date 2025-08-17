@@ -1,9 +1,10 @@
 const express = require("express");
 const router = express.Router();
-const Project = require("../models/projectSchema");
-const upload = require("../config/multerConfig");
+// const upload = require("../config/multerConfig");
 
-router.post("/add", upload.single("file"), async (req, res) => {
+//  upload.single("file"),
+
+router.post("/add", async (req, res) => {
   const { secretkey } = req.headers;
   const reqData = req.body;
   const file = req.file;
@@ -35,29 +36,6 @@ router.post("/add", upload.single("file"), async (req, res) => {
   }
 });
 
-router.get("/show", async (req, res) => {
-  try {
-    let data = Project.find();
-    data = data.sort("-createdAt").select("-createdAt -updatedAt -__v ");
-
-    const result = await data;
-    if (!result) {
-      return res.status(200).json({
-        success: false,
-        message: "No data found",
-      });
-    }
-    return res.status(200).json({
-      success: true,
-      message: `${result.length} data found`,
-      data: result,
-    });
-  } catch (err) {
-    return res.status(200).json({
-      success: false,
-      message: `error: ${err}`,
-    });
-  }
-});
+// router.get("/show", );
 
 module.exports = router;

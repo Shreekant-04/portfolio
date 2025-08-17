@@ -1,0 +1,15 @@
+body(style="font-family: Arial, sans-serif; margin: 0; padding: 0;")
+  div(style="max-width: 600px; background: hsl(0, 0%, 7%); color: hsl(0, 0%, 100%); margin: 20px auto; padding: 10px; border-radius: 8px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);")
+    h2(style="color: hsl(45, 54%, 58%); text-align: center; margin: 0; padding: 15px 0;") 📩 New Message Received
+    div(style="padding: 20px; color: hsl(0, 0%, 100%);")
+      p
+        | Hello 
+        strong Shreekant
+        | ,
+      p
+        | You got a new message from 
+        strong #{fullName} | #{email}
+      div(style="padding: 12px; border-left: 4px solid #d0d0d0; font-style: italic; background: hsl(0, 0%, 12%); border-radius: 4px;")
+        pre(style="white-space: pre-wrap; word-wrap: break-word; margin: 0;") #{message}
+      p(style="text-align: center; padding: 10px; font-size: 14px; color: hsl(0, 46%, 51%);")
+        | You can reply directly to the sender or reach out if further action is needed.

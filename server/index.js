@@ -1,30 +1,42 @@
-const express = require("express");
-const cors = require("cors");
-const dotEnv = require("dotenv");
-const morgan = require("morgan");
-dotEnv.config();
+process.env.UV_THREADPOOL_SIZE = 16;
+const logger = require("./utils/logger");
 
-const connectDB = require("./config/database");
-const Project = require("./routes/Project");
-const certificate = require("./routes/certificateRoute");
+process.on("uncaughtException", (err) => {
+  logger.info("UNCAUGHT EXCEPTION! 💥 Shutting down...");
+  logger.error(err.name, err);
+  console.log(err);
+  process.exit(1);
+});
+require("dotenv").config({ quiet: true });
 
-const app = express();
-connectDB();
-app.use(cors());
-app.use(express.json());
+require("./config/database")();
 
-if (app.get("env") === "development") {
-  app.use(morgan("tiny"));
-}
+const app = require("./app");
+const Email = require("./utils/email");
 
-app.use("/", Project);
-app.use("/certificate", certificate);
+const maildata = {
+  email: "shreekant4062@gmail.com",
+  fullName: "Shreekant",
+};
 
-app.get("/", (req, res) => {
-  res.status(200).json({ message: "hello buddy" });
+const mail = new Email(maildata);
+mail.verify();
+
+const server = app.listen(process.env.PORT || 3000, () => {
+  logger.info("Server is running on port", process.env.PORT || 3000);
 });
 
-let port = process.env.PORT || 3000;
-app.listen(port, () => {
-  console.log("listening on", port);
+process.on("unhandledRejection", (err) => {
+  logger.info("UNHANDLED REJECTION! 💥 Shutting down...");
+  logger.error(err.name, err);
+  server.close(() => {
+    process.exit(1);
+  });
+});
+
+process.on("SIGTERM", () => {
+  logger.info("👋 SIGTERM RECEIVED. Shutting down gracefully");
+  server.close(() => {
+    logger.info("💥 Process terminated!");
+  });
 });

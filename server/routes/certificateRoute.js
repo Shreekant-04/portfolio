@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-const Certificate = require("../models/certificate");
 
 const addCertificate = async (req, res) => {
   const { secretkey } = req.headers;
@@ -33,32 +32,6 @@ const addCertificate = async (req, res) => {
   }
 };
 
-const getCetrificate = async (req, res) => {
-  try {
-    let data = Certificate.find();
-    data = data.sort("-createdAt").select("-createdAt -updatedAt -__v ");
-
-    const result = await data;
-
-    if (!result) {
-      return res.status(200).json({
-        success: false,
-        message: "No data found",
-      });
-    }
-    return res.status(200).json({
-      success: true,
-      message: ` ${result.length} data found`,
-      data:result
-    });
-  } catch (err) {
-    return res.status(200).json({
-      success: false,
-      message: `error: ${err}`,
-    });
-  }
-};
-
-router.route("/").post(addCertificate).get(getCetrificate);
+router.route("/").post(addCertificate);
 
 module.exports = router;
