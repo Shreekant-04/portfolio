@@ -16,6 +16,7 @@ import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import { useEffect } from 'react';
 import { initGtag } from './utils/gtag';
+import AnalyticsTracker from './utils/AnalyticsTracker';
 
 export const links: Route.LinksFunction = () => [
   { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
@@ -88,6 +89,7 @@ export default function App() {
     <main className="root">
       <Analytics />
       <SpeedInsights />
+      <AnalyticsTracker />
       <Sidebar />
       <div className="main-content">
         <Navbar />
