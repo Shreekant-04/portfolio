@@ -8,6 +8,7 @@ import {
 } from "react-router";
 
 import type { Route } from "./+types/root";
+import { Analytics } from "@vercel/analytics/next";
 
 import Sidebar from "./components/Sidebar";
 import Navbar from "./components/Navbar";
@@ -57,6 +58,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 export default function App() {
   return (
     <main className="root">
+      <Analytics />
       <Sidebar />
       <div className="main-content">
         <Navbar />
