@@ -43,6 +43,7 @@ export function meta({}: Route.MetaArgs) {
 export const links: Route.LinksFunction = () => [
   { rel: 'canonical', href: 'https://shreekant.dev/projects' },
 ];
+
 export const handle = {
   breadcrumb: 'Projects',
 };
