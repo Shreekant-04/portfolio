@@ -19,17 +19,28 @@ export const initGtag = (measurementId: string): void => {
   script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
   document.head.appendChild(script);
 
-  // Init dataLayer + gtag
-  window.dataLayer = window.dataLayer || [];
-  function gtag(...args: any[]) {
-    window.dataLayer?.push(args);
-  }
-  window.gtag = gtag;
+  const script2 = document.createElement('script');
+  script2.innerHTML = `
+    window.dataLayer = window.dataLayer || [];
+    function gtag(...args) {
+      window.dataLayer.push(args);
+    }
+    window.gtag = gtag;
+    window.gtag('js', new Date());
+    window.gtag('config', '${measurementId}');
+    `;
+  document.head.appendChild(script2);
+  //   // Init dataLayer + gtag
+  //   window.dataLayer = window.dataLayer || [];
+  //   function gtag(...args: any[]) {
+  //     window.dataLayer?.push(args);
+  //   }
+  //   window.gtag = gtag;
 
-  window.gtag('js', new Date());
-  window.gtag('config', measurementId, {
-    send_page_view: false, // we’ll handle manually
-  });
+  //   window.gtag('js', new Date());
+  //   window.gtag('config', measurementId, {
+  //     send_page_view: false, // we’ll handle manually
+  //   });
 };
 
 /**

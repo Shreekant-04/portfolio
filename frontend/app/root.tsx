@@ -16,7 +16,7 @@ import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import { useEffect } from 'react';
 import { initGtag } from './utils/gtag';
-import AnalyticsTracker from './utils/AnalyticsTracker';
+// import AnalyticsTracker from './utils/AnalyticsTracker';
 
 export const links: Route.LinksFunction = () => [
   { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
@@ -77,7 +77,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 const GA_MEASUREMENT_ID = import.meta.env.VITE_GA_ID as string;
-console.log('GA Measurement ID:', GA_MEASUREMENT_ID);
 
 export default function App() {
   useEffect(() => {
@@ -89,7 +88,7 @@ export default function App() {
     <main className="root">
       <Analytics />
       <SpeedInsights />
-      <AnalyticsTracker />
+      {/* <AnalyticsTracker /> */}
       <Sidebar />
       <div className="main-content">
         <Navbar />
