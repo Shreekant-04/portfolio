@@ -1,12 +1,13 @@
-import emailjs from "@emailjs/browser";
-import { useRef } from "react";
-import { useLocation } from "react-router";
-import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import emailjs from '@emailjs/browser';
+import { Send } from 'lucide-react';
+import { useRef } from 'react';
+import { useLocation } from 'react-router';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Contact = () => {
   const location = useLocation();
-  const isActive = location.pathname === "/contact";
+  const isActive = location.pathname === '/contact';
   const form = useRef<HTMLFormElement | null>(null);
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
@@ -15,37 +16,37 @@ const Contact = () => {
     const serviceId = import.meta.env.SERVICE_ID;
     const templateId = import.meta.env.TEMPLATE_ID;
     const publicKey = import.meta.env.PUBLIC_KEY;
-    console.log("Service ID:", serviceId);
-    console.log("Template ID:", templateId);
-    console.log("Public Key:", publicKey);
+    console.log('Service ID:', serviceId);
+    console.log('Template ID:', templateId);
+    console.log('Public Key:', publicKey);
 
     if (form.current) {
       emailjs.sendForm(serviceId, templateId, form.current, publicKey).then(
         () => {
-          toast.success("Message sent successfully!", {
-            position: "bottom-right",
+          toast.success('Message sent successfully!', {
+            position: 'bottom-right',
             autoClose: 5000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
             draggable: true,
             progress: undefined,
-            theme: "dark",
+            theme: 'dark',
           });
           if (form.current) {
             form.current.reset();
           }
         },
         (error) => {
-          toast.error("Message failed to send: " + error.text, {
-            position: "bottom-right",
+          toast.error('Message failed to send: ' + error.text, {
+            position: 'bottom-right',
             autoClose: 5000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
             draggable: true,
             progress: undefined,
-            theme: "dark",
+            theme: 'dark',
           });
         }
       );
@@ -54,7 +55,7 @@ const Contact = () => {
 
   return (
     <article
-      className={`contact ${isActive ? "active" : ""}`}
+      className={`contact ${isActive ? 'active' : ''}`}
       data-page="contact"
     >
       <header>
@@ -112,7 +113,7 @@ const Contact = () => {
           ></textarea>
 
           <button className="form-btn" type="submit" data-form-btn>
-            <ion-icon name="paper-plane"></ion-icon>
+            <Send size={18} />
             <span>Send Message</span>
           </button>
         </form>

@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { BookOpen } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router';
 type certificateType = {
@@ -308,7 +309,7 @@ const Skills = () => {
       >
         <div className="title-wrapper">
           <div className="icon-box">
-            <ion-icon name="book-outline"></ion-icon>
+            <BookOpen size={18} />
           </div>
           <h3 className="h3">Experience</h3>
         </div>
@@ -398,7 +399,8 @@ const Skills = () => {
         >
           <div className="title-wrapper">
             <div className="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
+              <BookOpen size={18} />
+
             </div>
             <h3 className="h3">Certifications</h3>
           </div>
@@ -456,7 +458,7 @@ const Skills = () => {
       >
         <div className="title-wrapper">
           <div className="icon-box">
-            <ion-icon name="book-outline"></ion-icon>
+            <BookOpen size={18} />
           </div>
           <h3 className="h3">Education</h3>
         </div>

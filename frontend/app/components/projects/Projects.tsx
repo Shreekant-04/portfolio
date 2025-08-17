@@ -2,6 +2,7 @@ import { useEffect, useState, type SetStateAction } from 'react';
 import axios from 'axios';
 import { Link, useLocation } from 'react-router';
 import Loader from '../Common/Loader';
+import { Eye } from 'lucide-react';
 
 type ProjectType = {
   _id: string;
@@ -114,12 +115,14 @@ const Projects = () => {
                   >
                     <figure className="project-img">
                       <div className="project-item-icon-box">
-                        <ion-icon name="eye-outline"></ion-icon>
+                        <Eye size={18} />
                       </div>
                       <img
                         src={project.imgUrl}
                         alt={project.alt}
+                        // fetchPriority="high"
                         loading="lazy"
+                        // decoding="async"
                         height={'auto'}
                         width={'auto'}
                         title={project.title}

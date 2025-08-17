@@ -30,17 +30,6 @@ export const initGtag = (measurementId: string): void => {
     window.gtag('config', '${measurementId}');
     `;
   document.head.appendChild(script2);
-  //   // Init dataLayer + gtag
-  //   window.dataLayer = window.dataLayer || [];
-  //   function gtag(...args: any[]) {
-  //     window.dataLayer?.push(args);
-  //   }
-  //   window.gtag = gtag;
-
-  //   window.gtag('js', new Date());
-  //   window.gtag('config', measurementId, {
-  //     send_page_view: false, // we’ll handle manually
-  //   });
 };
 
 /**

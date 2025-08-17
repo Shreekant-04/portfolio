@@ -1,17 +1,15 @@
-declare namespace JSX {
-  interface IntrinsicElements {
-    'ion-icon': React.DetailedHTMLProps<
-      React.HTMLAttributes<HTMLElement>,
-      HTMLElement
-    > & {
-      name?: string;
-    };
-  }
-}
-
 import { useState } from 'react';
 import profile from '../assets/uifaces-cartoon-image.jpg';
 import { Link } from 'react-router';
+import {
+  CalendarDays,
+  ChevronDown,
+  Github,
+  Instagram,
+  Linkedin,
+  Mail,
+  MapPinCheck,
+} from 'lucide-react';
 
 const Sidebar = () => {
   const [toggle, settoggle] = useState<boolean>(false);
@@ -54,9 +52,8 @@ const Sidebar = () => {
           data-sidebar-btn
           onClick={toggleSidebar}
         >
-          <span>Show Contacts</span>
-
-          <ion-icon name="chevron-down"></ion-icon>
+          <span style={{ display: 'none' }}>Show Contacts</span>
+          <ChevronDown size={18} />
         </button>
       </div>
 
@@ -66,7 +63,7 @@ const Sidebar = () => {
         <ul className="contacts-list">
           <li className="contact-item">
             <div className="icon-box">
-              <ion-icon name="mail-outline"></ion-icon>
+              <Mail size={18} />
             </div>
 
             <div className="contact-info">
@@ -97,7 +94,7 @@ const Sidebar = () => {
 
           <li className="contact-item">
             <div className="icon-box">
-              <ion-icon name="calendar-outline"></ion-icon>
+              <CalendarDays size={18} />
             </div>
 
             <div className="contact-info">
@@ -109,7 +106,7 @@ const Sidebar = () => {
 
           <li className="contact-item">
             <div className="icon-box">
-              <ion-icon name="location-outline"></ion-icon>
+              <MapPinCheck size={18} />
             </div>
 
             <div className="contact-info">
@@ -129,7 +126,7 @@ const Sidebar = () => {
               target="_blank"
               className="social-link"
             >
-              <ion-icon name="logo-linkedin"></ion-icon>
+              <Linkedin size={18} />
               <span style={{ display: 'none' }}>LinkedIn</span>
             </Link>
           </li>
@@ -140,7 +137,7 @@ const Sidebar = () => {
               target="_blank"
               className="social-link"
             >
-              <ion-icon name="logo-github"></ion-icon>
+              <Github size={18} />
               <span style={{ display: 'none' }}>GitHub</span>
             </Link>
           </li>
@@ -151,7 +148,7 @@ const Sidebar = () => {
               target="_blank"
               className="social-link"
             >
-              <ion-icon name="logo-instagram"></ion-icon>
+              <Instagram size={18} />
               <span style={{ display: 'none' }}>Instagram</span>
             </Link>
           </li>
