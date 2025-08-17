@@ -36,7 +36,7 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export const links: Route.LinksFunction = () => [
-  { rel: 'canonical', href: 'https://shreekant.dev' },
+  { rel: 'canonical', href: 'https://shreekant.dev/' },
 ];
 
 export const handle = {
