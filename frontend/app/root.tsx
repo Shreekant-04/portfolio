@@ -36,7 +36,6 @@ export const links: Route.LinksFunction = () => [
   { rel: 'shortcut icon', href: '/favicon32x32.ico' },
 
   { rel: 'manifest', href: '/manifest.json' },
-  { rel: 'canonical', href: 'https://shreekant.dev/' },
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {

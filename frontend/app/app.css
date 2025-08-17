@@ -166,6 +166,30 @@ body {
   background: var(--smoky-black);
 }
 
+h1 {
+  font-size: var(--fs-1);
+}
+
+h2 {
+  font-size: var(--fs-2);
+}
+
+h3 {
+  font-size: var(--fs-4);
+}
+
+h4 {
+  font-size: var(--fs-5);
+}
+
+h5 {
+  font-size: var(--fs-6);
+}
+
+h6 {
+  font-size: var(--fs-7);
+}
+
 /*-----------------------------------*\
   #REUSED STYLE
 \*-----------------------------------*/
