@@ -153,12 +153,6 @@
       "@typescript-eslint/no-unsafe-declaration-merging": "warn"
     }
   },
-  "postcss": {
-    "plugins": {
-      "tailwindcss": {},
-      "autoprefixer": {}
-    }
-  },
   "eslintIgnore": [
     "build",
     "node_modules"
