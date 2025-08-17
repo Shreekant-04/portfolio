@@ -5,29 +5,30 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-} from "react-router";
+} from 'react-router';
 
-import type { Route } from "./+types/root";
+import type { Route } from './+types/root';
 
-import Sidebar from "./components/Sidebar";
-import Navbar from "./components/Navbar";
-import "./app.css";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/react";
+import Sidebar from './components/Sidebar';
+import Navbar from './components/Navbar';
+import './app.css';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 export const links: Route.LinksFunction = () => [
-  { rel: "preconnect", href: "https://fonts.googleapis.com" },
+  { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
   {
-    rel: "preconnect",
-    href: "https://fonts.gstatic.com",
-    crossOrigin: "anonymous",
+    rel: 'preconnect',
+    href: 'https://fonts.gstatic.com',
+    crossOrigin: 'anonymous',
   },
   {
-    rel: "stylesheet",
-    href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
+    rel: 'stylesheet',
+    href: 'https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap',
   },
-  { rel: "icon", href: "/favicon32x32.ico" },
-  { rel: "manifest", href: "/manifest.json" },
+  { rel: 'icon', href: '/favicon32x32.ico' },
+  { rel: 'manifest', href: '/manifest.json' },
+  { rel: 'canonical', href: 'https://shreekant.dev' },
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
@@ -36,6 +37,17 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#ffffff" />
+        <meta name="author" content="Shreekant" />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:site_name" content="Shreekant - Portfolio" />
+        <meta property="og:locale" content="en_IN" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="/og-image-home.png" />
+        <meta property="og:image:alt" content="Portfolio preview image" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@Shreekant_4" />
+        <meta name="twitter:creator" content="@Shreekant_4" />
         <Meta />
         <Links />
       </head>
@@ -71,15 +83,15 @@ export default function App() {
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
-  let message = "Oops!";
-  let details = "An unexpected error occurred.";
+  let message = 'Oops!';
+  let details = 'An unexpected error occurred.';
   let stack: string | undefined;
 
   if (isRouteErrorResponse(error)) {
-    message = error.status === 404 ? "404" : "Error";
+    message = error.status === 404 ? '404' : 'Error';
     details =
       error.status === 404
-        ? "The requested page could not be found."
+        ? 'The requested page could not be found.'
         : error.statusText || details;
   } else if (import.meta.env.DEV && error && error instanceof Error) {
     details = error.message;

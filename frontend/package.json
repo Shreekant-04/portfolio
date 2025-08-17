@@ -2,6 +2,12 @@
   "name": "react-router",
   "private": true,
   "type": "module",
+  "version": "1.0.0",
+  "description": "A modern portfolio website built with React, React Router, Vite, Tailwind CSS, and TypeScript.",
+  "homepage": "https://shreekant.dev",
+  "bugs": {
+    "url": "https://github.com/Shreekant-04/portfolio/issues"
+  },
   "scripts": {
     "build": "react-router build",
     "dev": "react-router dev",
@@ -32,5 +38,185 @@
     "typescript": "^5.8.3",
     "vite": "^6.3.3",
     "vite-tsconfig-paths": "^5.1.4"
+  },
+  "author": {
+    "name": "Shreekant",
+    "email": "shreekant4062@gmail.com",
+    "url": "https://shreekant.dev",
+    "github": "https://github.com/Shreekant-04"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Shreekant-04/portfolio"
+  },
+  "keywords": [
+    "react",
+    "react-router",
+    "vite",
+    "tailwindcss",
+    "typescript",
+    "web development",
+    "portfolio",
+    "web design",
+    "web developer",
+    "app developer",
+    "frontend",
+    "backend",
+    "UI/UX",
+    "skills",
+    "projects",
+    "contact",
+    "blog",
+    "SEO",
+    "performance",
+    "analytics",
+    "email",
+    "server-side rendering",
+    "static site generation",
+    "progressive web app",
+    "PWA",
+    "responsive design",
+    "accessibility",
+    "cross-browser compatibility",
+    "modern web technologies",
+    "web standards",
+    "web performance optimization",
+    "web security",
+    "web accessibility",
+    "web development tools",
+    "web development frameworks",
+    "web development libraries",
+    "web development best practices",
+    "web development trends",
+    "web development community",
+    "web development resources",
+    "web development tutorials",
+    "web development courses",
+    "web development blogs",
+    "web development podcasts",
+    "web development conferences",
+    "web development events",
+    "web development news",
+    "web development updates",
+    "web development tips",
+    "web development tricks",
+    "web development hacks",
+    "web development tools and technologies",
+    "web development methodologies",
+    "web development processes",
+    "web development workflows",
+    "web development project management",
+    "web development collaboration"
+  ],
+  "eslintConfig": {
+    "extends": [
+      "react-router",
+      "react-router/typescript",
+      "react-router/prettier",
+      "plugin:react/recommended",
+      "plugin:react/jsx-runtime",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:@typescript-eslint/recommended-requiring-type-checking",
+      "plugin:prettier/recommended"
+    ],
+    "parserOptions": {
+      "project": "./tsconfig.json",
+      "tsconfigRootDir": "./",
+      "sourceType": "module"
+    },
+    "rules": {
+      "react/prop-types": "off",
+      "react/react-in-jsx-scope": "off",
+      "react/jsx-uses-react": "off",
+      "react/jsx-uses-vars": "warn",
+      "@typescript-eslint/no-unused-vars": [
+        "warn",
+        {
+          "argsIgnorePattern": "^_",
+          "varsIgnorePattern": "^_",
+          "caughtErrorsIgnorePattern": "^_"
+        }
+      ],
+      "@typescript-eslint/no-explicit-any": "warn",
+      "@typescript-eslint/explicit-module-boundary-types": "off",
+      "@typescript-eslint/no-non-null-assertion": "off",
+      "@typescript-eslint/no-unsafe-assignment": "warn",
+      "@typescript-eslint/no-unsafe-member-access": "warn",
+      "@typescript-eslint/no-unsafe-call": "warn",
+      "@typescript-eslint/no-unsafe-return": "warn",
+      "@typescript-eslint/no-unsafe-argument": "warn",
+      "@typescript-eslint/no-unsafe-enum-comparison": "warn",
+      "@typescript-eslint/no-unsafe-function-type": "warn",
+      "@typescript-eslint/no-unsafe-optional-chaining": "warn",
+      "@typescript-eslint/no-unsafe-type-assertion": "warn",
+      "@typescript-eslint/no-unsafe-declaration-merging": "warn"
+    }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not op_mini all",
+    "last 2 versions",
+    "Firefox ESR"
+  ],
+  "postcss": {
+    "plugins": {
+      "tailwindcss": {},
+      "autoprefixer": {}
+    }
+  },
+  "eslintIgnore": [
+    "build",
+    "node_modules"
+  ],
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "printWidth": 80,
+    "tabWidth": 2,
+    "semi": true,
+    "useTabs": false,
+    "bracketSpacing": true,
+    "arrowParens": "always",
+    "endOfLine": "lf"
+  },
+  "typegen": {
+    "output": "./app/routes/__generated__/react-router.d.ts",
+    "include": [
+      "./app/routes/**/*.tsx",
+      "./app/routes/**/*.ts"
+    ],
+    "exclude": [
+      "./app/routes/__generated__",
+      "./app/routes/__generated__/**/*"
+    ],
+    "options": {
+      "strict": true,
+      "exportType": "default",
+      "exportTypeName": "RouteExports",
+      "exportTypePath": "./__generated__/react-router.d.ts",
+      "exportTypeNamePrefix": "Route",
+      "exportTypePathPrefix": "./__generated__/",
+      "exportTypePathSuffix": ".d.ts",
+      "exportTypeNameSuffix": "Exports",
+      "exportTypeNameSeparator": "_",
+      "exportTypePathSeparator": "/",
+      "exportTypeNamePostfix": "",
+      "exportTypePathPostfix": "",
+      "exportTypeNamePrefixSeparator": "",
+      "exportTypePathPrefixSeparator": "",
+      "exportTypeNameSuffixSeparator": "",
+      "exportTypePathSuffixSeparator": "",
+      "exportTypeNamePostfixSeparator": "",
+      "exportTypePathPostfixSeparator": "",
+      "exportTypeNamePrefixPostfix": "",
+      "exportTypePathPrefixPostfix": "",
+      "exportTypeNameSuffixPostfix": "",
+      "exportTypePathSuffixPostfix": "",
+      "exportTypeNamePostfixPostfix": "",
+      "exportTypePathPostfixPostfix": "",
+      "exportTypeNamePrefixPostfixSeparator": ""
+    }
   }
 }
