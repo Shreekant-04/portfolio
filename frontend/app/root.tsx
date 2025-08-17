@@ -8,11 +8,12 @@ import {
 } from "react-router";
 
 import type { Route } from "./+types/root";
-import { Analytics } from "@vercel/analytics/next";
 
 import Sidebar from "./components/Sidebar";
 import Navbar from "./components/Navbar";
 import "./app.css";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -59,6 +60,7 @@ export default function App() {
   return (
     <main className="root">
       <Analytics />
+      <SpeedInsights />
       <Sidebar />
       <div className="main-content">
         <Navbar />
