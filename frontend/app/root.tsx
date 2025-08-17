@@ -55,17 +55,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta name="twitter:creator" content="@Shreekant_4" />
         <Meta />
         <Links />
-
-        {/* <!-- Google tag (gtag.js) --> */}
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-HY15JTMSX1"
-        ></script>
-        <script>
-          window.dataLayer = window.dataLayer || []; function gtag()
-          {dataLayer.push(arguments)}
-          gtag('js', new Date()); gtag('config', 'G-HY15JTMSX1');
-        </script>
       </head>
       <body>
         {children}
