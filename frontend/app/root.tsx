@@ -15,6 +15,13 @@ import './app.css';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 
+// Declare dataLayer on the Window interface for TypeScript
+declare global {
+  interface Window {
+    dataLayer: any[];
+  }
+}
+
 export const links: Route.LinksFunction = () => [
   { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
   {
@@ -55,6 +62,17 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta name="twitter:creator" content="@Shreekant_4" />
         <Meta />
         <Links />
+
+        {/* Google tag (gtag.js) */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-HY15JTMSX1"
+        ></script>
+        <script>
+          window.dataLayer = window.dataLayer || []; function gtag()
+          {window.dataLayer.push(arguments)}
+          gtag('js', new Date()); gtag('config', 'G-HY15JTMSX1');
+        </script>
       </head>
       <body>
         {children}
