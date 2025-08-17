@@ -14,8 +14,6 @@ export function meta({}: Route.MetaArgs) {
       content:
         'Home, Portfolio, Web Developer, Designer, Projects, Skills, Shreekant',
     },
-    { name: 'author', content: 'Shreekant' },
-
     { name: 'og:title', content: 'Shreekant - Portfolio' },
     {
       name: 'og:description',
