@@ -29,9 +29,14 @@ export const links: Route.LinksFunction = () => [
     href: 'https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap',
   },
 
-  { rel: 'icon', href: '/favicon16x16.ico' },
+  { rel: 'icon', href: '/favicon16x16.ico', type: 'image/x-icon' },
+  { rel: 'icon', href: '/favicon.ico', type: 'image/x-icon' },
   { rel: 'apple-touch-icon', href: '/favicon32x32.ico' },
-  { rel: 'mask-icon', href: '/favicon32x32.ico', color: '#5bbad5' },
+  {
+    rel: 'mask-icon',
+    href: '/favicon32x32.ico',
+    color: '#5bbad5',
+  },
   { rel: 'shortcut icon', href: '/favicon32x32.ico' },
 
   { rel: 'manifest', href: '/manifest.json' },
@@ -88,14 +93,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 
-// const GA_MEASUREMENT_ID = import.meta.env.VITE_GA_ID as string;
-
 export default function App() {
-  // useEffect(() => {
-  //   if (GA_MEASUREMENT_ID) {
-  //     initGtag(GA_MEASUREMENT_ID);
-  //   }
-  // }, []);
   return (
     <main className="root">
       <Analytics />
