@@ -1,5 +1,3 @@
-// prettier-ignore
-
 import {
   isRouteErrorResponse,
   Links,
