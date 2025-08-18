@@ -17,7 +17,6 @@ export const initGtag = (measurementId: string): void => {
   const script = document.createElement('script');
   script.async = true;
   script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
-  document.head.appendChild(script);
 
   const script2 = document.createElement('script');
   script2.innerHTML = `
@@ -29,6 +28,29 @@ export const initGtag = (measurementId: string): void => {
     window.gtag('js', new Date());
     window.gtag('config', '${measurementId}');
     `;
+
+  const script3 = document.createElement('script');
+  script3.type = 'application/ld+json';
+  script3.innerHTML = `
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Shreekant",
+    "url": "https://shreekant.dev",
+    "image": "https://shreekant.dev/profile.jpg",
+  "sameAs": [
+    "https://github.com/Shreekant-04",
+    "https://www.linkedin.com/in/shreekantkumar",
+    "https://www.instagram.com/shree_4.6",
+    "https://x.com/Shreekant_4",
+    "https://medium.com/@shreekant04",
+    "https://rapidapi.com/shreekant74sk/api/quotes-api12",
+  ]
+  }
+  `;
+
+  document.head.appendChild(script3);
+  document.head.appendChild(script);
   document.head.appendChild(script2);
 };
 
