@@ -26,9 +26,19 @@ export const initGtag = (measurementId: string): void => {
     }
     window.gtag = gtag;
     window.gtag('js', new Date());
+
     window.gtag('config', '${measurementId}');
     `;
 
+
+//     <!-- Google tag (gtag.js) -->
+// <script>
+//   window.dataLayer = window.dataLayer || [];
+//   function gtag(){dataLayer.push(arguments);}
+//   gtag('js', new Date());
+
+//   gtag('config', 'G-HY15JTMSX1');
+// </script>
   document.head.appendChild(script);
   document.head.appendChild(script2);
 };

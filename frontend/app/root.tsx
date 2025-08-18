@@ -55,6 +55,20 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@Shreekant_4" />
         <meta name="twitter:creator" content="@Shreekant_4" />
+
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-HY15JTMSX1"
+        ></script>
+        <script>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-HY15JTMSX1');
+          `}
+        </script>
         {/* <!-- JSON-LD Structured Data --> */}
         <script type="application/ld+json">
           {JSON.stringify(personSchema)}
@@ -71,14 +85,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 
-const GA_MEASUREMENT_ID = import.meta.env.VITE_GA_ID as string;
+// const GA_MEASUREMENT_ID = import.meta.env.VITE_GA_ID as string;
 
 export default function App() {
-  useEffect(() => {
-    if (GA_MEASUREMENT_ID) {
-      initGtag(GA_MEASUREMENT_ID);
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (GA_MEASUREMENT_ID) {
+  //     initGtag(GA_MEASUREMENT_ID);
+  //   }
+  // }, []);
   return (
     <main className="root">
       <Analytics />
