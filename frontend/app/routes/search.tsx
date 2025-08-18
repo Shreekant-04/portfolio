@@ -1,5 +1,5 @@
 import type { Route } from '../+types/root';
-import SearchComponent from '../components/search/search';
+import SearchComponent from '../components/search/Search';
 
 export function meta({}: Route.MetaArgs) {
   return [
