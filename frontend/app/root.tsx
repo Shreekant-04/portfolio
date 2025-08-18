@@ -70,7 +70,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
         {/* <!-- JSON-LD Structured Data --> */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(personSchema, null, 2),
+          }}
         />
 
         <Meta />
@@ -123,14 +125,85 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
   }
 
   return (
-    <main className="pt-16 p-4 container mx-auto">
-      <h1>{message}</h1>
-      <p>{details}</p>
-      {stack && (
-        <pre className="w-full p-4 overflow-x-auto">
-          <code>{stack}</code>
-        </pre>
-      )}
+    <main
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+    >
+      <div
+        style={{
+          textAlign: 'center',
+        }}
+      >
+        <img
+          src="not-found.jpg"
+          alt="404 Not Found"
+          style={{
+            width: 'full',
+            height: '400px',
+            objectFit: 'cover',
+            filter: 'drop-shadow(0 4px 12px rgba(99, 98, 98, 0.6))',
+            borderRadius: '1.5rem',
+            marginBottom: '1.5rem',
+          }}
+        />
+
+        <p
+          style={{
+            color: '#d1d5db',
+            marginBottom: '1.5rem',
+            fontSize: '1.125rem',
+            lineHeight: '1.6',
+          }}
+        >
+          {details}
+        </p>
+
+        {stack && (
+          <pre
+            style={{
+              textAlign: 'left',
+              fontSize: '0.875rem',
+              background: 'rgba(17, 24, 39, 0.9)',
+              border: '1px solid #4b5563',
+              color: '#9ca3af',
+              padding: '1rem',
+              borderRadius: '0.5rem',
+              overflowX: 'auto',
+              marginBottom: '1.5rem',
+              maxHeight: '240px',
+            }}
+          >
+            <code>{stack}</code>
+          </pre>
+        )}
+
+        <a
+          href="/"
+          style={{
+            display: 'inline-block',
+            padding: '0.75rem 1.5rem',
+            fontSize: '1.125rem',
+            fontWeight: '500',
+            color: '#000',
+            background: '#f59e0b',
+            borderRadius: '0.75rem',
+            boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
+            transition: 'all 0.3s ease',
+            textDecoration: 'none',
+          }}
+          onMouseEnter={(e) =>
+            ((e.target as HTMLAnchorElement).style.background = '#fbbf24')
+          }
+          onMouseLeave={(e) =>
+            ((e.target as HTMLAnchorElement).style.background = '#f59e0b')
+          }
+        >
+          Go Home
+        </a>
+      </div>
     </main>
   );
 }
