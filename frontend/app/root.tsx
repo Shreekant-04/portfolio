@@ -57,7 +57,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta name="twitter:creator" content="@Shreekant_4" />
         {/* <!-- JSON-LD Structured Data --> */}
         <script type="application/ld+json">
-          ${JSON.stringify(personSchema)}
+          {JSON.stringify(personSchema)}
         </script>
         <Meta />
         <Links />
