@@ -16,6 +16,7 @@ import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import { useEffect } from 'react';
 import { initGtag } from './utils/gtag';
+import { personSchema } from './utils/schema';
 
 export const links: Route.LinksFunction = () => [
   { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
@@ -54,6 +55,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@Shreekant_4" />
         <meta name="twitter:creator" content="@Shreekant_4" />
+        {/* <!-- JSON-LD Structured Data --> */}
+        <script type="application/ld+json">
+          ${JSON.stringify(personSchema)}
+        </script>
         <Meta />
         <Links />
       </head>
