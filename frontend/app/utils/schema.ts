@@ -13,8 +13,7 @@ export const personSchema = {
         "https://www.linkedin.com/in/shreekantkumar",
         "https://www.instagram.com/shree_4.6",
         "https://x.com/Shreekant_4",
-        "https://medium.com/@shreekant04",
-        "https://rapidapi.com/shreekant74sk/api/quotes-api12"
+        "https://medium.com/@shreekant04"
       ],
       "jobTitle": "Full-Stack Developer",
       "worksFor": {
@@ -28,8 +27,9 @@ export const personSchema = {
       "url": "https://shreekant.dev",
       "name": "Shreekant Portfolio",
       "publisher": {
-        "@type": "Person",
-        "name": "Shreekant"
+        "@type": "Organization",
+        "name": "Shreekant Portfolio",
+        "url": "https://shreekant.dev"
       },
       "potentialAction": {
         "@type": "SearchAction",
@@ -39,7 +39,7 @@ export const personSchema = {
       "inLanguage": "en"
     }
   ]
-}
+};
 
 //  {
 //       '@type': 'Organization',

@@ -1,3 +1,5 @@
+// prettier-ignore
+
 import {
   isRouteErrorResponse,
   Links,
@@ -68,9 +70,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
           `}
         </script>
         {/* <!-- JSON-LD Structured Data --> */}
-        <script type="application/ld+json">
-          {JSON.stringify(personSchema)}
-        </script>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+        />
+
         <Meta />
         <Links />
       </head>
