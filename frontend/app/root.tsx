@@ -14,8 +14,6 @@ import Navbar from './components/Navbar';
 import './app.css';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
-import { useEffect } from 'react';
-import { initGtag } from './utils/gtag';
 import { personSchema } from './utils/schema';
 
 export const links: Route.LinksFunction = () => [
