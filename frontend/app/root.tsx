@@ -1,5 +1,6 @@
 import {
   isRouteErrorResponse,
+  Link,
   Links,
   Meta,
   Outlet,
@@ -180,8 +181,8 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
           </pre>
         )}
 
-        <a
-          href="/"
+        <Link
+          to="/"
           style={{
             display: 'inline-block',
             padding: '0.75rem 1.5rem',
@@ -202,7 +203,7 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
           }
         >
           Go Home
-        </a>
+        </Link>
       </div>
     </main>
   );
