@@ -5,7 +5,8 @@ export const personSchema = {
   "@graph": [
     {
       "@type": "Person",
-      "name": "Shreekant",
+      "name": "Shreekant Kumar",
+      "alternateName": "Shreekant",
       "url": "https://shreekant.dev",
       "image": "https://shreekant.dev/profile.jpg",
       "sameAs": [
@@ -20,6 +21,16 @@ export const personSchema = {
         "@type": "Organization",
         "name": "MHJ PHARMACONCEPTS PRIVATE LIMITED",
         "url": "https://mhjpharma.com"
+      },
+      "description": "Experienced Full-Stack Developer specializing in web and app development, passionate about building scalable, user-centric solutions.",
+      "email": "mailto:shreekant4062@gmail.com",
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "St. Matthews Public School"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IN"
       }
     },
     {
@@ -29,7 +40,11 @@ export const personSchema = {
       "publisher": {
         "@type": "Organization",
         "name": "Shreekant Portfolio",
-        "url": "https://shreekant.dev"
+        "url": "https://shreekant.dev",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://shreekant.dev/og-image-home.png"
+        }
       },
       "potentialAction": {
         "@type": "SearchAction",
@@ -37,17 +52,19 @@ export const personSchema = {
         "query-input": "required name=search_term_string"
       },
       "inLanguage": "en"
+    },
+    {
+      "@type": "Organization",
+      "name": "Shreekant Portfolio",
+      "url": "https://shreekant.dev",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://shreekant.dev/og-image-home.png"
+      },
+      "sameAs": [
+        "https://github.com/Shreekant-04",
+        "https://www.linkedin.com/in/shreekantkumar"
+      ]
     }
   ]
 };
-
-//  {
-//       '@type': 'Organization',
-//       name: 'Futuristic Design',
-//       url: 'https://futuristicdesign.in',
-//       logo: 'https://futuristicdesign.in/logo.png',
-//       sameAs: [
-//         'https://www.linkedin.com/company/futuristicdesign',
-//         'https://www.instagram.com/futuristicdesign',
-//       ],
-//     },
