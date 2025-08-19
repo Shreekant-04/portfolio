@@ -347,8 +347,9 @@ portfolio
 
 ## License
 
-MIT
+![MIT](/LICENSE)
 
 ---
 
+![Linkedin](https://www.linkedin.com/in/shreekantkumar/)
 Built with 🧠 by Shreekant.
