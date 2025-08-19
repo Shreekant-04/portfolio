@@ -76,7 +76,7 @@ const Contact = () => {
       <section className="mapbox" data-mapbox>
         <figure>
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d16652.64192146247!2d77.06529512668132!3d28.666103975016373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1728722424594!5m2!1sen!2sin"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d112043.17570265787!2d76.98509423642669!3d28.649259872044325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d045709693ca7%3A0x439edb221545a927!2sWest%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1755616476245!5m2!1sen!2sin"
             width="400"
             height="300"
             loading="lazy"
