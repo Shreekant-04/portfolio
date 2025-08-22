@@ -6,4 +6,5 @@ export default [
   route('projects', 'routes/projects.tsx'),
   route('contact', 'routes/contact.tsx'),
   route('search', 'routes/search.tsx'),
+
 ] satisfies RouteConfig;
