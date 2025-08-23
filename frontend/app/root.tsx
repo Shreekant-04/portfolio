@@ -35,6 +35,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
     <html lang="en">
       <head>
         <meta charSet="utf-8" />
+        <link rel="icon" href="favicon.ico" type="image/x-icon" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#ffffff" />
         <meta name="author" content="Shreekant" />
@@ -47,57 +48,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@Shreekant_4" />
         <meta name="twitter:creator" content="@Shreekant_4" />
-        <link rel="apple-touch-icon" href="favicon.png" />
+        <link rel="apple-touch-icon" href="favicon.ico" />
         <link rel="manifest" href="manifest.json" />
-        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-        <link
-          rel="shortcut icon"
-          href="favicon16x16.ico"
-          type="image/x-icon"
-          sizes="16x16"
-        />
-        <link
-          rel="shortcut icon"
-          href="favicon32x32.ico"
-          type="image/x-icon"
-          sizes="32x32"
-        />
-        <link
-          rel="shortcut icon"
-          href="favicon48x48.ico"
-          type="image/x-icon"
-          sizes="48x48"
-        />
-        <link
-          rel="shortcut icon"
-          href="favicon64x64.ico"
-          type="image/x-icon"
-          sizes="64x64"
-        />
-        <link
-          rel="shortcut icon"
-          href="favicon128x128.ico"
-          type="image/x-icon"
-          sizes="128x128"
-        />
-        <link
-          rel="shortcut icon"
-          href="favicon192x192.ico"
-          type="image/x-icon"
-          sizes="192x192"
-        />
-        <link
-          rel="shortcut icon"
-          href="favicon256x256.ico"
-          type="image/x-icon"
-          sizes="256x256"
-        />
-        <link
-          rel="shortcut icon"
-          href="favicon512x512.ico"
-          type="image/x-icon"
-          sizes="512x512"
-        />
+
         <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-HY15JTMSX1"
