@@ -35,9 +35,26 @@ export function Layout({ children }: { children: React.ReactNode }) {
     <html lang="en">
       <head>
         <meta charSet="utf-8" />
-        <link rel="icon" href="favicon.ico" type="image/x-icon" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        {/* <!-- Favicon for browsers --> */}
+        <link rel="icon" type="image/png" href="/favicon-12547.png" />
+
+        {/* <!-- SVG (modern browsers, scalable) --> */}
+        <link rel="icon" type="image/svg+xml" href="/favicon-52547.svg" />
+
+        {/* <!-- Apple Touch Icon (iOS) --> */}
+        <link rel="apple-touch-icon" href="/favicon-12547.png" />
+
+        {/* <!-- Android/Chrome --> */}
+        <link rel="icon" type="image/png" href="/favicon-12547.png" />
+
+        {/* <!-- Legacy fallback --> */}
+        <link rel="shortcut icon" href="/favicon-new.ico" />
+
+        <link rel="manifest" href="/site.webmanifest" />
         <meta name="theme-color" content="#ffffff" />
+
         <meta name="author" content="Shreekant" />
         <meta name="robots" content="index, follow" />
         <meta property="og:site_name" content="Shreekant - Portfolio" />
@@ -48,8 +65,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@Shreekant_4" />
         <meta name="twitter:creator" content="@Shreekant_4" />
-        <link rel="apple-touch-icon" href="favicon.ico" />
-        <link rel="manifest" href="manifest.json" />
 
         <script
           async
