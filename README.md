@@ -352,5 +352,3 @@ portfolio
 ---
 
 [Linkedin](https://www.linkedin.com/in/shreekantkumar/)
-
-Built with 🧠 by Shreekant.
