@@ -1,4 +1,5 @@
 # Portfolio
+[Agreement](https://docs.google.com/document/d/1LAdeNNM_XfQMnLsWW4a3_jHt1PAvdyE2X3tmxVw_yHA/edit?usp=sharing)
 
 A modern, production-ready personal portfolio built with React Router, Vite, TypeScript, and a Node.js/Express backend. Showcases projects, skills, certifications, and contact information, with an admin panel for content management.
 
