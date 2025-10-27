@@ -66,41 +66,5 @@ export const personSchema = {
         "https://www.linkedin.com/in/shreekantkumar"
       ]
     },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://shreekant.dev"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Skills",
-          "item": "https://shreekant.dev/skills"
-        },
-        
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Projects",
-          "item": "https://shreekant.dev/projects"
-        },
-        {
-          "@type": "ListItem",
-          "position": 4,
-          "name": "Contact",
-          "item": "https://shreekant.dev/contact"
-        },
-        {
-          "@type": "ListItem",
-          "position": 5,
-          "name": "Resume",
-          "item": "https://shreekant.dev/resume.pdf"
-        }
-      ]
-    }
   ]
 };
