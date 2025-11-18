@@ -30,6 +30,11 @@
   <priority>0.80</priority>
 </url>
 <url>
+  <loc>https://shreekant.dev/blog</loc>
+  <lastmod>2025-11-18T18:25:48.388Z</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
   <loc>https://shreekant.dev/blog/understanding-the-event-loop-in-nodejs</loc>
   <lastmod>2025-11-18T18:25:48.388Z</lastmod>
   <priority>0.80</priority>
