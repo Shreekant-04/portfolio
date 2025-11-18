@@ -29,5 +29,25 @@
   <lastmod>2025-08-26T16:51:11+00:00</lastmod>
   <priority>0.80</priority>
 </url>
+<url>
+  <loc>https://shreekant.dev/blog/understanding-the-event-loop-in-nodejs</loc>
+  <lastmod>2025-11-18T18:25:48.388Z</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://shreekant.dev/blog/how-routing-works-in-expressjs</loc>
+  <lastmod>2025-11-18T18:25:48.388Z</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://shreekant.dev/blog/redux-vs-context-api-which-state-management-tool-should-you-choose</loc>
+  <lastmod>2025-11-18T18:25:48.388Z</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://shreekant.dev/blog/building-a-scalable-ecommerce-backend-with-nodejs-and-mongodb</loc>
+  <lastmod>2025-11-18T18:25:48.388Z</lastmod>
+  <priority>0.80</priority>
+</url>
 
 </urlset>
