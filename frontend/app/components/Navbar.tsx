@@ -1,14 +1,14 @@
-import { NavLink } from "react-router";
+import { NavLink } from 'react-router';
 
 const Navbar = () => {
   return (
-    <nav className={"navbar"}>
+    <nav className={'navbar'}>
       <ul className="navbar-list">
         <li className="navbar-item">
           <NavLink
             to="/"
             className={({ isActive }) =>
-              isActive ? "navbar-link active" : "navbar-link"
+              isActive ? 'navbar-link active' : 'navbar-link'
             }
             data-nav-link
           >
@@ -20,7 +20,7 @@ const Navbar = () => {
           <NavLink
             to="/skills"
             className={({ isActive }) =>
-              isActive ? "navbar-link active" : "navbar-link"
+              isActive ? 'navbar-link active' : 'navbar-link'
             }
             data-nav-link
           >
@@ -32,7 +32,7 @@ const Navbar = () => {
           <NavLink
             to="/projects"
             className={({ isActive }) =>
-              isActive ? "navbar-link active" : "navbar-link"
+              isActive ? 'navbar-link active' : 'navbar-link'
             }
             data-nav-link
           >
@@ -40,30 +40,29 @@ const Navbar = () => {
           </NavLink>
         </li>
 
-        {/* <li className="navbar-item">
+        <li className="navbar-item">
           <NavLink
             to="/blog"
             className={({ isActive }) =>
-              isActive ? "navbar-link active" : "navbar-link"
+              isActive ? 'navbar-link active' : 'navbar-link'
             }
             data-nav-link
           >
             Blog
           </NavLink>
-        </li> */}
+        </li>
 
         <li className="navbar-item">
           <NavLink
             to="/contact"
             className={({ isActive }) =>
-              isActive ? "navbar-link active" : "navbar-link"
+              isActive ? 'navbar-link active' : 'navbar-link'
             }
             data-nav-link
           >
             Contact
           </NavLink>
         </li>
-      
       </ul>
     </nav>
   );

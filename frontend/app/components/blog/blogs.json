@@ -1,0 +1,85 @@
+[
+  {
+    "id": 1,
+    "title": "Understanding the Event Loop in Node.js",
+    "content": "<p>The Event Loop is one of the most fundamental concepts in Node.js that makes it unique among server-side technologies. Understanding how it works is crucial for writing efficient Node.js applications.</p>\n\n<h3>What is the Event Loop?</h3>\n<p>The Event Loop is what allows Node.js to perform non-blocking I/O operations despite the fact that JavaScript is single-threaded. It's the mechanism that handles asynchronous callbacks and makes Node.js so efficient for I/O-intensive applications.</p>\n\n<h3>How Does It Work?</h3>\n<p>The Event Loop operates in phases, each with a specific purpose:</p>\n<ul>\n  <li><strong>Timer Phase:</strong> Executes callbacks scheduled by setTimeout() and setInterval()</li>\n  <li><strong>Pending Callbacks Phase:</strong> Executes I/O callbacks deferred to the next loop iteration</li>\n  <li><strong>Idle, Prepare Phase:</strong> Only used internally</li>\n  <li><strong>Poll Phase:</strong> Fetches new I/O events and executes I/O-related callbacks</li>\n  <li><strong>Check Phase:</strong> Executes setImmediate() callbacks</li>\n  <li><strong>Close Callbacks Phase:</strong> Executes close event callbacks</li>\n</ul>\n\n<h3>Practical Implications</h3>\n<p>Understanding the Event Loop helps you:</p>\n<ul>\n  <li>Write more efficient asynchronous code</li>\n  <li>Avoid blocking operations that can freeze your application</li>\n  <li>Debug performance issues more effectively</li>\n  <li>Make better architectural decisions</li>\n</ul>\n\n<h3>Best Practices</h3>\n<p>To work effectively with the Event Loop:</p>\n<ul>\n  <li>Use asynchronous operations whenever possible</li>\n  <li>Avoid CPU-intensive operations in the main thread</li>\n  <li>Use worker threads for heavy computations</li>\n  <li>Profile your application to identify bottlenecks</li>\n</ul>\n\n<h3>Conclusion</h3>\n<p>The Event Loop is what makes Node.js powerful for building scalable network applications. By understanding how it works, you can write better, more efficient code and build applications that perform well under load.</p>",
+    "excerpt": "The Event Loop is one of the most fundamental concepts in Node.js that makes it unique among server-side technologies.",
+    "category": "Backend Development",
+    "dateTime": "2024-03-15",
+    "date": "Mar 15, 2024",
+    "author": "Shreekant",
+    "readTime": "8 min read",
+    "image": "https://res.cloudinary.com/dkg7e09ia/image/upload/v1763489810/adbskjabcjskcbn_wt3xf4.png",
+    "tags": [
+      "Node.js",
+      "JavaScript",
+      "Backend",
+      "Event Loop",
+      "Asynchronous Programming"
+    ],
+    "slug": "understanding-the-event-loop-in-nodejs"
+  },
+  {
+    "id": 3,
+    "title": "How Routing Works in Express.js",
+    "content": "<p>Express.js is one of the most popular web frameworks for Node.js, widely used for building scalable and fast server-side applications. At the core of Express lies its powerful and flexible routing system, which allows developers to define how an application responds to various HTTP requests.</p>\n\n<h3>What Is Routing?</h3>\n<p>Routing refers to determining how an application responds to a client request to a particular endpoint, which is defined by a URL path and an HTTP method. In simple terms, routing connects incoming requests to the correct logic or function.</p>\n\n<h3>Basic Routing in Express.js</h3>\n<p>Express provides simple methods like <strong>app.get()</strong>, <strong>app.post()</strong>, <strong>app.put()</strong>, <strong>app.delete()</strong>, and more. Each method handles a specific HTTP request type.</p>\n<p>For example:</p>\n<pre><code>app.get('/home', (req, res) => {\n  res.send('Welcome to Home Page');\n});</code></pre>\n<p>Here, when a GET request is made to <code>/home</code>, Express runs the callback and sends a response.</p>\n\n<h3>Route Parameters</h3>\n<p>Route parameters allow you to capture values from the URL. They are denoted using a colon (<code>:</code>):</p>\n<pre><code>app.get('/user/:id', (req, res) => {\n  res.send(`User ID: ${req.params.id}`);\n});</code></pre>\n<p>This is useful for dynamic routes such as user profiles or product pages.</p>\n\n<h3>Query Parameters</h3>\n<p>Query parameters are accessed through <code>req.query</code> and are commonly used for filters, search queries, and pagination.</p>\n<pre><code>app.get('/search', (req, res) => {\n  res.send(req.query);\n});</code></pre>\n\n<h3>Using Express Router</h3>\n<p>For larger applications, Express provides the <strong>Router</strong> module, which helps organize routes into separate files and modules.</p>\n<pre><code>const router = express.Router();\n\nrouter.get('/products', (req, res) => {\n  res.send('Product List');\n});\n\nmodule.exports = router;</code></pre>\n<p>You can then mount the router in the main app:</p>\n<pre><code>app.use('/api', router);</code></pre>\n\n<h3>Middleware in Routes</h3>\n<p>Middleware allows you to run custom logic before the final route handler, such as authentication or logging.</p>\n<pre><code>app.get('/dashboard', authMiddleware, (req, res) => {\n  res.send('Dashboard');\n});</code></pre>\n\n<h3>Conclusion</h3>\n<p>Routing is the backbone of any Express.js application. By understanding how routes, parameters, queries, and middleware work together, you can build clean, scalable, and well-structured server-side applications.</p>",
+    "excerpt": "Learn how routing works in Express.js and how it helps define how your server responds to different HTTP requests.",
+    "category": "Backend Development",
+    "dateTime": "2024-04-20",
+    "date": "Apr 20, 2024",
+    "author": "Shreekant",
+    "readTime": "6 min read",
+    "image": "https://res.cloudinary.com/dkg7e09ia/image/upload/v1763490003/qqqqqq_ggjirc.png",
+    "tags": [
+      "Express.js",
+      "Node.js",
+      "Backend",
+      "Routing",
+      "Web Development",
+      "JavaScript"
+    ],
+    "slug": "how-routing-works-in-expressjs"
+  },
+  {
+    "id": 2,
+    "title": "Redux vs Context API: Which State Management Tool Should You Choose?",
+    "content": "<p>State management is one of the most important aspects of building modern React applications. When your project grows, managing state efficiently becomes crucial for performance, scalability, and maintainability. Two popular tools developers rely on for this are <strong>Redux</strong> and the <strong>Context API</strong>.</p>\n\n    <h3>Introduction</h3>\n    <p>Both Redux and Context API help manage state, but they serve different purposes and work in different ways. Understanding when to use which can significantly improve the structure and efficiency of your application.</p>\n\n    <h3>What is Redux?</h3>\n    <p>Redux is a predictable state container for JavaScript apps. It provides a centralized store, strict state management rules, middleware support, and powerful developer tools.</p>\n    <p>Redux is often preferred for larger applications where complex state logic, data flow, and maintainability are key concerns.</p>\n\n    <h3>What is the Context API?</h3>\n    <p>The Context API is a built-in React feature that helps avoid prop drilling. It allows you to share state across components without passing props manually through each level of the component tree.</p>\n    <p>It’s simple, lightweight, and great for small to medium apps with minimal global state.</p>\n    \n    <h3>Key Differences</h3>\n    <p>Here are the major differences between Redux and Context API:</p>\n    <ul>\n      <li><strong>Complexity:</strong> Redux is more complex and structured, while Context API is simpler and built into React.</li>\n      <li><strong>Scalability:</strong> Redux scales better for large applications with complex state management.</li>\n      <li><strong>Performance:</strong> Context API can cause unnecessary re-renders if not optimized; Redux minimizes this with selectors.</li>\n      <li><strong>Tools & Ecosystem:</strong> Redux offers DevTools, middleware, async handlers, and a vast ecosystem. Context API is lightweight but limited.</li>\n      <li><strong>Learning Curve:</strong> Redux has a steeper learning curve; Context API is easier to understand and use.</li>\n    </ul>\n\n    <h3>When To Use Redux?</h3>\n    <p>Redux is ideal when your application requires:</p>\n    <ul>\n      <li>Complex global state management</li>\n      <li>Advanced debugging and tracking</li>\n      <li>Predictable state transitions</li>\n      <li>Middleware for async actions (Redux Thunk, Redux Saga)</li>\n      <li>Large-scale architecture with multiple developers</li>\n    </ul>\n\n    <h3>When To Use Context API?</h3>\n    <p>The Context API shines when you need:</p>\n    <ul>\n      <li>Simple global state like theme, language, or auth</li>\n      <li>Small to medium-sized applications</li>\n      <li>Minimal configuration and setup</li>\n      <li>A lightweight alternative without adding dependencies</li>\n    </ul>\n\n    <h3>Performance Considerations</h3>\n    <p>The Context API can trigger re-renders in all components that consume the context. This may impact performance in large applications.</p>\n    <p>Redux uses selectors and memoization, which help avoid unnecessary renders, making it more efficient for heavy state workloads.</p>\n\n    <h3>Conclusion</h3>\n    <p>Both Redux and the Context API are powerful tools, but they serve different use cases. If your application is simple and you need a lightweight global state solution, Context API is the perfect choice. For larger, complex, scalable apps requiring robust control and debugging, Redux remains the industry standard.</p>\n    <p>Choosing the right tool depends on your project’s complexity, team size, and long-term maintainability goals.</p>\n  ",
+    "excerpt": "Redux and Context API are two popular ways to manage state in React applications. Understanding their differences can help you choose the best tool for your project.",
+    "category": "Frontend Development",
+    "dateTime": "2024-04-10",
+    "date": "Apr 10, 2024",
+    "author": "Shreekant",
+    "readTime": "7 min read",
+    "image": "https://res.cloudinary.com/dkg7e09ia/image/upload/v1763489926/hbhbhjfv_sbr2sf.png",
+    "tags": [
+      "React",
+      "Redux",
+      "Context API",
+      "State Management",
+      "Frontend",
+      "JavaScript"
+    ],
+    "slug": "redux-vs-context-api-which-state-management-tool-should-you-choose"
+  },
+  {
+    "id": 4,
+    "title": "Building a Scalable E-commerce Backend with Node.js and MongoDB",
+    "content": "<p>Building a scalable e-commerce backend requires choosing the right technologies that can handle high traffic, large product catalogs, secure user authentication, and complex business logic. Node.js and MongoDB are two powerful technologies widely used to build fast, flexible, and scalable e-commerce platforms.</p>\n\n<h3>Why Use Node.js?</h3>\n<p>Node.js is an excellent choice for e-commerce backends due to its non-blocking event-driven architecture. This allows Node.js to handle thousands of simultaneous requests efficiently, making it ideal for applications that need to scale.</p>\n<ul>\n  <li>High performance with asynchronous I/O</li>\n  <li>JavaScript on both frontend and backend</li>\n  <li>Massive ecosystem with npm packages</li>\n  <li>Great support for real-time updates</li>\n</ul>\n\n<h3>Why MongoDB?</h3>\n<p>MongoDB is a NoSQL database designed to store unstructured data in a flexible schema. This is particularly beneficial for e-commerce platforms where products may have different attributes.</p>\n<ul>\n  <li>Flexible document-based schema</li>\n  <li>Scales horizontally across clusters</li>\n  <li>Fast reads and writes for real-time applications</li>\n  <li>Built-in sharding and replication for high availability</li>\n</ul>\n\n<h3>Core Features of an E-commerce Backend</h3>\n<p>A scalable e-commerce backend typically includes the following modules:</p>\n<ul>\n  <li><strong>User Authentication & Authorization:</strong> Login, signup, roles (admin, seller, customer)</li>\n  <li><strong>Product Management:</strong> Add, update, delete, and list products efficiently</li>\n  <li><strong>Inventory System:</strong> Track product stock in real time</li>\n  <li><strong>Shopping Cart:</strong> Maintain user carts across devices</li>\n  <li><strong>Order Management:</strong> Place orders, update statuses, send notifications</li>\n  <li><strong>Payment Integration:</strong> Secure integrations with payment gateways</li>\n  <li><strong>Admin Dashboard:</strong> Manage products, users, and orders</li>\n</ul>\n\n<h3>API Design with Express.js</h3>\n<p>Express.js provides a clean and structured way to build REST APIs. Each module (users, products, orders) can be separated into individual routes and controllers.</p>\n<pre><code>app.get('/products', productController.getAll);\napp.post('/products', authMiddleware, productController.create);\n</code></pre>\n<p>Following MVC architecture ensures better code readability and maintenance.</p>\n\n<h3>Database Modeling with MongoDB</h3>\n<p>MongoDB allows embedding or referencing documents. For e-commerce:</p>\n<ul>\n  <li>Products and categories are typically separate collections</li>\n  <li>Orders store product snapshots for accuracy</li>\n  <li>Users store cart and order references</li>\n</ul>\n<pre><code>{\n  \"name\": \"Product Name\",\n  \"price\": 499,\n  \"category\": \"Electronics\",\n  \"stock\": 30\n}</code></pre>\n\n<h3>Scaling Your Backend</h3>\n<p>To scale an e-commerce backend, you can use strategies such as:</p>\n<ul>\n  <li>Load balancing with Nginx</li>\n  <li>Horizontal scaling with multiple Node.js instances</li>\n  <li>MongoDB sharding for database scaling</li>\n  <li>Redis caching for faster response times</li>\n  <li>CDN for static content delivery</li>\n</ul>\n\n<h3>Conclusion</h3>\n<p>Node.js and MongoDB provide a powerful foundation for building scalable and high-performance e-commerce backends. Their speed, flexibility, and ecosystem support make them an excellent choice for modern online stores. With the right architecture and scaling strategies, your e-commerce platform can easily handle millions of users and products.</p>",
+    "excerpt": "Learn how to build a scalable e-commerce backend using Node.js and MongoDB with best practices, architecture design, and scaling strategies.",
+    "category": "Backend Development",
+    "dateTime": "2024-04-28",
+    "date": "Apr 28, 2024",
+    "author": "Shreekant",
+    "readTime": "9 min read",
+    "image": "https://res.cloudinary.com/dkg7e09ia/image/upload/v1763490002/wwww_ioerzf.png",
+    "tags": [
+      "Node.js",
+      "MongoDB",
+      "Backend",
+      "E-commerce",
+      "API Development",
+      "Express.js"
+    ],
+    "slug": "building-a-scalable-ecommerce-backend-with-nodejs-and-mongodb"
+  }
+]
