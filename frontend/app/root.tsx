@@ -60,7 +60,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta property="og:site_name" content="Shreekant - Portfolio" />
         <meta property="og:locale" content="en_IN" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="/og-image-home.png" />
+        {/* <meta property="og:image" content="/og-image-home.png" /> */}
         <meta property="og:image:alt" content="Portfolio preview image" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@Shreekant_4" />
