@@ -9,6 +9,7 @@ export function meta({}: Route.MetaArgs) {
       content:
         "Explore Shreekant's Blog for insights on web development, design, and tech trends. Stay updated with tutorials, tips, and industry news.",
     },
+    { name: 'google-adsense-account', content: 'ca-pub-7258185739917298' },
     {
       name: 'keywords',
       content:
