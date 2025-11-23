@@ -1052,6 +1052,10 @@ main {
   display: block;
   animation: scaleUp 0.25s ease forwards;
 }
+.blog-post-item.active {
+  display: block;
+  animation: scaleUp 0.25s ease forwards;
+}
 
 @keyframes scaleUp {
   0% {
@@ -1593,6 +1597,7 @@ textarea.form-input::-webkit-resizer {
 
   .blog-title {
     font-size: var(--fs-1);
+    color: var(--vegas-gold);
   }
 
   .related-posts .blog-posts-list {

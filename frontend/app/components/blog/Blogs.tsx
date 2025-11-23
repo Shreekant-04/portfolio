@@ -1,5 +1,5 @@
 import React, { type JSX } from 'react';
-import { useLocation, useNavigate } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
 import img5 from '../../assets/images/blog-5.jpg';
 import img6 from '../../assets/images/blog-6.jpg';
 import blogs from './blogs.json';
@@ -45,24 +45,29 @@ const BlogCard = ({ blog }: BlogCardProps): JSX.Element => {
     navigate(`/blog/${slug}`);
   };
   return (
-    <li className="blog-post-item" onClick={() => handleNavigate(blog.slug)}>
-      <figure className="blog-banner-box">
-        <img src={blog.image} alt={blog.title} loading="lazy" />
-      </figure>
+    <li
+      className="blog-post-item active"
+      onClick={() => handleNavigate(blog.slug)}
+    >
+      <Link to={`/blog/${blog.slug}`} className="blog-link-overlay">
+        <figure className="blog-banner-box">
+          <img src={blog.image} alt={blog.title} loading="lazy" />
+        </figure>
 
-      <div className="blog-content">
-        <div className="blog-meta">
-          <p className="blog-category">{blog.category}</p>
+        <div className="blog-content">
+          <div className="blog-meta">
+            <p className="blog-category">{blog.category}</p>
 
-          <span className="dot"></span>
+            <span className="dot"></span>
 
-          <time dateTime={blog.dateTime}>{blog.date}</time>
+            <time dateTime={blog.dateTime}>{blog.date}</time>
+          </div>
+
+          <h3 className="h3 blog-item-title">{blog.title}</h3>
+
+          <p className="blog-text">{blog.excerpt}</p>
         </div>
-
-        <h3 className="h3 blog-item-title">{blog.title}</h3>
-      
-        <p className="blog-text">{blog.excerpt}</p>
-      </div>
+      </Link>
     </li>
   );
 };
