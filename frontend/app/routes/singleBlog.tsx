@@ -61,7 +61,7 @@ export function meta({ params }: Route.MetaArgs) {
     { property: 'og:description', content: description },
     { property: 'og:type', content: 'article' },
     { property: 'og:url', content: currentUrl },
-    { property: 'og:image', content: `${siteUrl}${image}` },
+    { property: 'og:image', content: `${image}` },
     { property: 'og:image:width', content: '1200' },
     { property: 'og:image:height', content: '630' },
     { property: 'og:image:alt', content: title },
@@ -74,7 +74,7 @@ export function meta({ params }: Route.MetaArgs) {
     { name: 'twitter:creator', content: '@shreekant04' },
     { name: 'twitter:title', content: title },
     { name: 'twitter:description', content: description },
-    { name: 'twitter:image', content: `${siteUrl}${image}` },
+    { name: 'twitter:image', content: `${image}` },
     { name: 'twitter:image:alt', content: title },
 
     // Additional SEO meta tags for better content classification
@@ -121,7 +121,7 @@ export function meta({ params }: Route.MetaArgs) {
             },
             image: {
               '@type': 'ImageObject',
-              url: `${siteUrl}${image}`,
+              url: `${image}`,
               width: 1200,
               height: 630,
             },
