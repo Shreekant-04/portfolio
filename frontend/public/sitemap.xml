@@ -6,52 +6,57 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <url>
   <loc>https://shreekant.dev/</loc>
-  <lastmod>2025-08-17T16:27:49+00:00</lastmod>
+  <lastmod>2026-05-17T16:27:49+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://shreekant.dev/skills</loc>
-  <lastmod>2025-08-17T16:27:49+00:00</lastmod>
+  <lastmod>2026-05-17T16:27:49+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://shreekant.dev/projects</loc>
-  <lastmod>2025-08-17T16:27:49+00:00</lastmod>
+  <lastmod>2026-05-17T16:27:49+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://shreekant.dev/contact</loc>
-  <lastmod>2025-08-17T16:27:49+00:00</lastmod>
+  <lastmod>2026-05-17T16:27:49+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://shreekant.dev/resume.pdf</loc>
-  <lastmod>2025-08-26T16:51:11+00:00</lastmod>
+  <lastmod>2026-05-17T16:51:11+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://shreekant.dev/blog</loc>
-  <lastmod>2025-11-18T18:25:48.388Z</lastmod>
+  <lastmod>2026-05-17T18:25:48.388Z</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://shreekant.dev/blog/understanding-the-event-loop-in-nodejs</loc>
-  <lastmod>2025-11-18T18:25:48.388Z</lastmod>
+  <lastmod>2026-05-17T18:25:48.388Z</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://shreekant.dev/blog/how-routing-works-in-expressjs</loc>
-  <lastmod>2025-11-18T18:25:48.388Z</lastmod>
+  <lastmod>2026-05-17T18:25:48.388Z</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://shreekant.dev/blog/redux-vs-context-api-which-state-management-tool-should-you-choose</loc>
-  <lastmod>2025-11-18T18:25:48.388Z</lastmod>
+  <lastmod>2026-05-17T18:25:48.388Z</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://shreekant.dev/blog/building-a-scalable-ecommerce-backend-with-nodejs-and-mongodb</loc>
-  <lastmod>2025-11-18T18:25:48.388Z</lastmod>
+  <lastmod>2026-05-17T18:25:48.388Z</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://shreekant.dev/blog/why-you-should-use-helmet-in-expressjs</loc>
+  <lastmod>2026-05-18T18:25:48.388Z</lastmod>
   <priority>0.80</priority>
 </url>
 

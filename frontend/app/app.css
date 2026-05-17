@@ -1052,6 +1052,7 @@ main {
   display: block;
   animation: scaleUp 0.25s ease forwards;
 }
+
 .blog-post-item.active {
   display: block;
   animation: scaleUp 0.25s ease forwards;
@@ -1370,6 +1371,12 @@ main {
 .blog-body strong {
   color: var(--white-2);
   font-weight: var(--fw-600);
+}
+
+.blog-body img {
+  width: 100%;
+  margin: 20px 0;
+  border-radius: 12px;
 }
 
 .blog-tags {

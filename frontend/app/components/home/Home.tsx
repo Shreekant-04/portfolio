@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLocation } from 'react-router';
 import devIcon from '../../assets/images/icon-dev.svg';
+import appIcon from '../../assets/images/icon-app.svg';
 
 const Home = () => {
   const location = useLocation();
@@ -53,6 +54,25 @@ const Home = () => {
 
                 <p className="service-item-text">
                   High-quality development of sites at the professional level.
+                </p>
+              </div>
+            </li>
+            <li className="service-item">
+              <div className="service-icon-box">
+                <img
+                  src={appIcon}
+                  alt="App development icon"
+                  width="40"
+                  height="auto"
+                  loading="lazy"
+                />
+              </div>
+
+              <div className="service-content-box">
+                <h4 className="h4 service-item-title">App development</h4>
+
+                <p className="service-item-text">
+                  High-quality development of apps at the professional level.
                 </p>
               </div>
             </li>
